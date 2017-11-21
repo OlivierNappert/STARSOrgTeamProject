@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5418ED30-9E67-407A-BA69-9F16E8004911}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>STARSOrg.My.MyApplication</StartupObject>
+    <RootNamespace>STARSOrg</RootNamespace>
+    <AssemblyName>STARSOrg</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>STARSOrg.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>STARSOrg.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add Member.designer.vb">
+      <DependentUpon>Add Member.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Member.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CDB.vb" />
+    <Compile Include="cRole.vb" />
+    <Compile Include="frmAdminChoice.designer.vb">
+      <DependentUpon>frmAdminChoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminChoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminResetPass.designer.vb">
+      <DependentUpon>frmAdminResetPass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminResetPass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEventManager.Designer.vb">
+      <DependentUpon>frmEventManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEventManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEventRSVP.Designer.vb">
+      <DependentUpon>frmEventRSVP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEventRSVP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoginChangePass.designer.vb">
+      <DependentUpon>frmLoginChangePass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginChangePass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewUser.designer.vb">
+      <DependentUpon>frmNewUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoles.Designer.vb">
+      <DependentUpon>frmRoles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRoles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRSVPReport.Designer.vb">
+      <DependentUpon>frmRSVPReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRSVPReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModDB.vb" />
+    <Compile Include="modErrHandler.vb" />
+    <Compile Include="modGlobal.vb" />
+    <Compile Include="modObjects.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Add Member.resx">
+      <DependentUpon>Add Member.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminChoice.resx">
+      <DependentUpon>frmAdminChoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminResetPass.resx">
+      <DependentUpon>frmAdminResetPass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEventManager.resx">
+      <DependentUpon>frmEventManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEventRSVP.resx">
+      <DependentUpon>frmEventRSVP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoginChangePass.resx">
+      <DependentUpon>frmLoginChangePass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewUser.resx">
+      <DependentUpon>frmNewUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoles.resx">
+      <DependentUpon>frmRoles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRSVPReport.resx">
+      <DependentUpon>frmRSVPReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\STARS National LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ramirez-Alejandro-e1488583249944 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\member.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\events.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsvp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\courses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\semesters.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tutors.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
