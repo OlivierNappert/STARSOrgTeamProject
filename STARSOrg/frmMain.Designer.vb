@@ -55,7 +55,8 @@ Partial Class frmMain
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbHome, Me.ToolStripSeparator6, Me.tsbMember, Me.ToolStripSeparator5, Me.tsbRole, Me.ToolStripSeparator2, Me.tsbEvents, Me.ToolStripSeparator3, Me.tsbRSVP, Me.ToolStripSeparator1, Me.ToolStripButton8, Me.ToolStripSeparator4, Me.tsbSemester, Me.tsbHelp, Me.ToolStripSeparator8, Me.ToolStripSeparator7, Me.tsbLogOut, Me.tsbTutor})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(699, 41)
+        Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1048, 63)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -134,7 +135,7 @@ Partial Class frmMain
         Me.tsbRSVP.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.tsbRSVP.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbRSVP.Name = "tsbRSVP"
-        Me.tsbRSVP.Size = New System.Drawing.Size(23, 38)
+        Me.tsbRSVP.Size = New System.Drawing.Size(23, 60)
         Me.tsbRSVP.Text = "RSVP"
         '
         'ToolStripSeparator1
@@ -223,10 +224,9 @@ Partial Class frmMain
         '
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(178, 364)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(261, 456)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(352, 55)
+        Me.Label1.Size = New System.Drawing.Size(527, 84)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "FIU STARS Organization"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -235,8 +235,7 @@ Partial Class frmMain
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Image = Global.STARSOrg.My.Resources.Resources.STARS_National_LOGO
-        Me.PictureBox1.Location = New System.Drawing.Point(211, 73)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox1.Location = New System.Drawing.Point(376, 112)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(296, 280)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -245,14 +244,13 @@ Partial Class frmMain
         '
         'frmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(699, 465)
+        Me.ClientSize = New System.Drawing.Size(1048, 715)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ToolStrip1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmMain"
         Me.Text = "FIU STARS"
         Me.ToolStrip1.ResumeLayout(False)
