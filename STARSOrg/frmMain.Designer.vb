@@ -86,7 +86,7 @@ Partial Class frmMain
         Me.tsbMember.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbMember.Name = "tsbMember"
         Me.tsbMember.Size = New System.Drawing.Size(48, 48)
-        Me.tsbMember.Text = "HOME"
+        Me.tsbMember.Text = "MEMBER"
         '
         'ToolStripSeparator5
         '
@@ -222,9 +222,11 @@ Partial Class frmMain
         '
         'Label1
         '
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(261, 456)
+        Me.Label1.Location = New System.Drawing.Point(261, 420)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(527, 84)
         Me.Label1.TabIndex = 2
@@ -233,12 +235,14 @@ Partial Class frmMain
         '
         'PictureBox1
         '
+        Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Image = Global.STARSOrg.My.Resources.Resources.STARS_National_LOGO
         Me.PictureBox1.Location = New System.Drawing.Point(376, 112)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(296, 280)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
@@ -247,17 +251,17 @@ Partial Class frmMain
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(1048, 715)
+        Me.ClientSize = New System.Drawing.Size(1048, 545)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Name = "frmMain"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FIU STARS"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 

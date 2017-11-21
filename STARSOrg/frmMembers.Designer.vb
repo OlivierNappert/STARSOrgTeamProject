@@ -47,12 +47,12 @@ Partial Class frmMembers
         Me.txtVal = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnUpdateMember = New System.Windows.Forms.Button()
-        Me.btnAddMember = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dgrMembers = New System.Windows.Forms.DataGridView()
         Me.errP = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.ofdOpenPhoto = New System.Windows.Forms.OpenFileDialog()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -100,7 +100,7 @@ Partial Class frmMembers
         Me.tsbMember.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbMember.Name = "tsbMember"
         Me.tsbMember.Size = New System.Drawing.Size(48, 48)
-        Me.tsbMember.Text = "HOME"
+        Me.tsbMember.Text = "MEMBER"
         '
         'ToolStripSeparator5
         '
@@ -278,8 +278,7 @@ Partial Class frmMembers
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btnUpdateMember)
-        Me.GroupBox1.Controls.Add(Me.btnAddMember)
+        Me.GroupBox1.Controls.Add(Me.btnUpdate)
         Me.GroupBox1.Location = New System.Drawing.Point(661, 68)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox1.Name = "GroupBox1"
@@ -289,25 +288,15 @@ Partial Class frmMembers
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Interact"
         '
-        'btnUpdateMember
+        'btnUpdate
         '
-        Me.btnUpdateMember.Location = New System.Drawing.Point(168, 37)
-        Me.btnUpdateMember.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnUpdateMember.Name = "btnUpdateMember"
-        Me.btnUpdateMember.Size = New System.Drawing.Size(152, 43)
-        Me.btnUpdateMember.TabIndex = 5
-        Me.btnUpdateMember.Text = "Update member"
-        Me.btnUpdateMember.UseVisualStyleBackColor = True
-        '
-        'btnAddMember
-        '
-        Me.btnAddMember.Location = New System.Drawing.Point(8, 37)
-        Me.btnAddMember.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnAddMember.Name = "btnAddMember"
-        Me.btnAddMember.Size = New System.Drawing.Size(152, 43)
-        Me.btnAddMember.TabIndex = 4
-        Me.btnAddMember.Text = "Add Member"
-        Me.btnAddMember.UseVisualStyleBackColor = True
+        Me.btnUpdate.Location = New System.Drawing.Point(8, 37)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(152, 43)
+        Me.btnUpdate.TabIndex = 5
+        Me.btnUpdate.Text = "Update members"
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -341,6 +330,10 @@ Partial Class frmMembers
         Me.btnClose.TabIndex = 6
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
+        '
+        'ofdOpenPhoto
+        '
+        Me.ofdOpenPhoto.FileName = "OpenFileDialog1"
         '
         'frmMembers
         '
@@ -390,10 +383,10 @@ Partial Class frmMembers
     Friend WithEvents txtVal As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btnUpdateMember As Button
-    Friend WithEvents btnAddMember As Button
+    Friend WithEvents btnUpdate As Button
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents dgrMembers As DataGridView
     Friend WithEvents errP As ErrorProvider
     Friend WithEvents btnClose As Button
+    Friend WithEvents ofdOpenPhoto As OpenFileDialog
 End Class
