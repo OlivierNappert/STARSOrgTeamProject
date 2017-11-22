@@ -1,4 +1,6 @@
-﻿Public Class frmRoles
+﻿Imports System.Data.SqlClient
+Public Class frmRoles
+
     Private Sub frmRoles_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -17,4 +19,18 @@
         tsbProxy = DirectCast(sender, ToolStripButton)
         tsbProxy.DisplayStyle = ToolStripItemDisplayStyle.Image
     End Sub
+
+    Private Sub LoadRoles()
+        Dim objReader As SqlDataReader
+        lstRoles.Items.Clear()
+        Try
+            objReader = objRoles.GetAllRoles
+            Do While objReader.Read
+                lstRoles.Items.Add(objReader.Item("RoleID"))
+            Loop
+        Catch ex As Exception
+            'we could have CDB just throw the error and handle it here
+        End Try
+    End Sub
+
 End Class
