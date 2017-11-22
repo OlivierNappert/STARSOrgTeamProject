@@ -168,8 +168,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="tableAudit.vb" />
-    <Compile Include="tableSecurity.vb" />
+    <Compile Include="cAudits.vb" />
+    <Compile Include="cSecurities.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Add Member.resx">
