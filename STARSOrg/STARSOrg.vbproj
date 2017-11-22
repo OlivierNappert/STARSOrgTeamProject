@@ -79,7 +79,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CDB.vb" />
+    <Compile Include="cMemberRole.vb" />
     <Compile Include="cRole.vb" />
+    <Compile Include="cRoles.vb" />
     <Compile Include="frmAdminChoice.designer.vb">
       <DependentUpon>frmAdminChoice.vb</DependentUpon>
     </Compile>

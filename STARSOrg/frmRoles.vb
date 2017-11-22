@@ -1,4 +1,9 @@
-﻿Public Class frmRoles
+﻿Imports System.Data.SqlClient
+Public Class frmRoles
+    Private objRoles As cRoles
+    Private blnClearing As Boolean
+    Private blnReloading As Boolean
+
     Private Sub frmRoles_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -16,5 +21,21 @@
         Dim tsbProxy As ToolStripButton
         tsbProxy = DirectCast(sender, ToolStripButton)
         tsbProxy.DisplayStyle = ToolStripItemDisplayStyle.Image
+    End Sub
+
+    Private Sub tsbHome_Click(sender As Object, e As EventArgs) Handles tsbHome.Click
+        intNextAction = ACTION_HOME
+        Me.Hide()
+
+    End Sub
+    Private Sub LoadRoles()
+        Dim objReader As SqlDataReader
+        lstRoles.Items.Clear()
+
+        Try
+            objReader = objRoles.getAllRoles
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
