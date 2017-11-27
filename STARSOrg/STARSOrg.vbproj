@@ -78,10 +78,16 @@
     <Compile Include="Add Member.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="cAudit.vb" />
+    <Compile Include="cAudits.vb" />
     <Compile Include="CDB.vb" />
+    <Compile Include="cMember.vb" />
     <Compile Include="cMemberRole.vb" />
+    <Compile Include="cMembers.vb" />
     <Compile Include="cRole.vb" />
     <Compile Include="cRoles.vb" />
+    <Compile Include="cSecurities.vb" />
+    <Compile Include="cSecurity.vb" />
     <Compile Include="frmAdminChoice.designer.vb">
       <DependentUpon>frmAdminChoice.vb</DependentUpon>
     </Compile>
