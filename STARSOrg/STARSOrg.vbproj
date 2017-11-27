@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="cAudit.vb" />
     <Compile Include="CDB.vb" />
+    <Compile Include="cMember.vb" />
     <Compile Include="cRole.vb" />
     <Compile Include="cSecurity.vb" />
     <Compile Include="frmAdminChoice.designer.vb">
