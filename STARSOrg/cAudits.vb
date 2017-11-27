@@ -27,4 +27,32 @@ Public Class cAudits
     Public Function Save() As Integer
         Return _Audit.Save
     End Function
+
+    Public Function GetAllAudit() As SqlDataReader
+        Return myDB.GetDataReaderBySP("dbo.sp_getAllAudit", Nothing)
+    End Function
+
+    Public Function GetAuditByukid(strID As String) As cAudit
+        Dim params As New ArrayList
+        params.Add(New SqlParameter("ukid", strID))
+        FillObject(myDB.GetDataReaderBySP("dbo.sp_getAuditByukid", params))
+        Return _Audit
+    End Function
+
+    Private Function FillObject(sqldr As SqlDataReader) As cAudit
+        Using sqldr
+            If sqldr.Read() Then 'found the Audit record
+                With _Audit
+                    .ukid = sqldr.Item("ukid") & ""
+                    .PID = sqldr.Item("PID") & ""
+                    .ACCESSTIMESTAMP = sqldr.Item("ACCESSTIMESTAMP") & ""
+                    .SUCCESS = sqldr.Item("SUCCESS") & ""
+                End With
+            Else
+                'did not get a matching role record
+            End If
+        End Using
+        sqldr.Close()
+        Return _Audit
+    End Function
 End Class
