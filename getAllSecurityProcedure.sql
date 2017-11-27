@@ -1,0 +1,7 @@
+﻿CREATE PROCEDURE [dbo].sp_getAllSecurity
+
+AS
+	SELECT * FROM SECURITY
+
+RETURN 0
+
