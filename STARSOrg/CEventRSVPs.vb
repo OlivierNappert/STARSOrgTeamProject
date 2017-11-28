@@ -44,8 +44,8 @@ Public Class CEventRSVPs
                 With _EventRSVP
                     .ukid = sqldr.Item("ukid") & ""
                     .EventID = sqldr.Item("EventID") & ""
-                    .FName = sqldr.Item("Fname") & ""
-                    .LName = sqldr.Item("Lname") & ""
+                    .FName = sqldr.Item("FName") & ""
+                    .LName = sqldr.Item("LName") & ""
                     .Email = sqldr.Item("Email") & ""
                 End With
             Else
