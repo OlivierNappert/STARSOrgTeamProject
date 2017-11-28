@@ -79,6 +79,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CDB.vb" />
+    <Compile Include="CEvent.vb" />
+    <Compile Include="CEventRSVP.vb" />
+    <Compile Include="CEventRSVPs.vb" />
+    <Compile Include="CEvents.vb" />
+    <Compile Include="CEventType.vb" />
+    <Compile Include="CEventTypes.vb" />
     <Compile Include="cMemberRole.vb" />
     <Compile Include="cRole.vb" />
     <Compile Include="cRoles.vb" />
