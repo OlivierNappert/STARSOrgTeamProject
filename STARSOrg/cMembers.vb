@@ -18,11 +18,13 @@ Public Class cMembers
     Public Sub Clear()
         _Member = New cMember
     End Sub
+
     Public Sub CreateNewMember()
         'call this routine when clearing the edit portion of the screen to add a new Member
         Clear()
         _Member.IsNewMember = True
     End Sub
+
     Public Function Save() As Integer
         Return _Member.Save()
     End Function

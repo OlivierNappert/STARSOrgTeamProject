@@ -5,19 +5,20 @@ Public Class frmMembers
     Private sqlDA As SqlDataAdapter
     Private dt As DataTable
     Private myDB As CDB
+    Private objMembers As cMembers
 
     Private Sub frmMembers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         myDB = New CDB
+        objMembers = New cMembers
 
         If Not myDB.OpenDB() Then
             Application.Exit()
         End If
 
-        Dim strSp As String = "dbo.sp_getMember"
         ModDB.objSQLCommand.Parameters.Clear()
         ModDB.objSQLCommand.CommandType = CommandType.StoredProcedure
 
-        sqlDA = myDB.GetDataAdapterBySp(strSp, Nothing)
+        sqlDA = myDB.GetDataAdapterBySp("dbo.sp_getMember", Nothing)
         dt = New DataTable
         sqlDA.Fill(dt)
         dgrMembers.DataSource = dt
@@ -69,5 +70,9 @@ Public Class frmMembers
         sqlDA.Fill(dt)
         dgrMembers.DataSource = dt
         dgrMembers.AutoGenerateColumns = True
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+
     End Sub
 End Class
