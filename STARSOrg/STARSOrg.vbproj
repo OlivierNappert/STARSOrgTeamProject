@@ -81,6 +81,12 @@
     <Compile Include="cAudit.vb" />
     <Compile Include="cAudits.vb" />
     <Compile Include="CDB.vb" />
+    <Compile Include="CEvent.vb" />
+    <Compile Include="CEventRSVP.vb" />
+    <Compile Include="CEventRSVPs.vb" />
+    <Compile Include="CEvents.vb" />
+    <Compile Include="CEventType.vb" />
+    <Compile Include="CEventTypes.vb" />
     <Compile Include="cMember.vb" />
     <Compile Include="cMemberRole.vb" />
     <Compile Include="cMembers.vb" />
