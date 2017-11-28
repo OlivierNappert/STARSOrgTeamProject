@@ -15,7 +15,7 @@ Public Class CEventTypes
     End Property
 
     Public Sub Clear()
-        _Event = New CEventType
+        _EventType = New CEventType
     End Sub
 
     Public Sub CreateNewEventType()
