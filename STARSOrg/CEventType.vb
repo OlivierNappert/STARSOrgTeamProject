@@ -52,13 +52,13 @@ Public Class CEventType
         If IsNewEventType Then
             Dim params As New ArrayList
             params.Add(New SqlParameter("eventTypeID", _mstrEventTypeID))
-            Dim strRes As String = myDB.GetSingleValueFromSP("sp_CheckRoleIDExists", params)
+            Dim strRes As String = myDB.GetSingleValueFromSP("sp_CheckEventTypeIDExists", params)
             If Not strRes = 0 Then
                 Return -1  'not UNIQUE!
             End If
         End If
         'if not a new role, or it is new and has a unique ID, then do the save (update or insert)
-        Return myDB.ExecSP("sp_SaveRole", GetSaveParameters())
+        Return myDB.ExecSP("sp_SaveEventType", GetSaveParameters())
 
     End Function
 End Class

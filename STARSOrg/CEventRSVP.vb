@@ -84,14 +84,14 @@ Public Class CEventRSVP
         'return -1 if the ID already exists (and we can't create a new record with duplicate ID)
         If isNewUkid Then
             Dim params As New ArrayList
-            params.Add(New SqlParameter("uKid", _mstrUkid))
-            Dim strRes As String = myDB.GetSingleValueFromSP("sp_CheckRoleIDExists", params)
+            params.Add(New SqlParameter("ukid", _mstrUkid))
+            Dim strRes As String = myDB.GetSingleValueFromSP("sp_CheckUkidExists", params)
             If Not strRes = 0 Then
                 Return -1  'not UNIQUE!
             End If
         End If
         'if not a new role, or it is new and has a unique ID, then do the save (update or insert)
-        Return myDB.ExecSP("sp_SaveRole", GetSaveParameters())
+        Return myDB.ExecSP("sp_SaveEventRSVP", GetSaveParameters())
 
     End Function
 End Class
