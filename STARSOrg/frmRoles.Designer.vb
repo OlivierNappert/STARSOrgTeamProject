@@ -48,14 +48,14 @@ Partial Class frmRoles
         Me.grpNew = New System.Windows.Forms.GroupBox()
         Me.chkNew = New System.Windows.Forms.CheckBox()
         Me.grpRoles = New System.Windows.Forms.GroupBox()
+        Me.lstRoles = New System.Windows.Forms.ListBox()
         Me.grpEdit = New System.Windows.Forms.GroupBox()
+        Me.txtDesc = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtRoleID = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.sslStatus = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.txtDesc = New System.Windows.Forms.TextBox()
-        Me.lstRoles = New System.Windows.Forms.ListBox()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.ToolStrip1.SuspendLayout()
@@ -73,7 +73,7 @@ Partial Class frmRoles
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbHome, Me.ToolStripSeparator6, Me.tsbMember, Me.ToolStripSeparator5, Me.tsbRole, Me.ToolStripSeparator2, Me.tsbEvents, Me.ToolStripSeparator3, Me.tsbRSVP, Me.ToolStripSeparator1, Me.ToolStripButton8, Me.ToolStripSeparator4, Me.ToolStripButton1, Me.ToolStripSeparator8, Me.tsbTutor, Me.tsbHelp, Me.ToolStripSeparator7, Me.tsbLogOut})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(665, 50)
+        Me.ToolStrip1.Size = New System.Drawing.Size(748, 62)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -240,10 +240,10 @@ Partial Class frmRoles
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(507, 566)
+        Me.Button1.Location = New System.Drawing.Point(570, 708)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(139, 48)
+        Me.Button1.Size = New System.Drawing.Size(156, 60)
         Me.Button1.TabIndex = 12
         Me.Button1.Text = "Produce Formatted Report"
         Me.Button1.UseVisualStyleBackColor = True
@@ -252,29 +252,29 @@ Partial Class frmRoles
         '
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(169, 66)
+        Me.Label2.Location = New System.Drawing.Point(190, 82)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(477, 67)
+        Me.Label2.Size = New System.Drawing.Size(536, 83)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "FIU STARS Organization Members"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnRemove
         '
-        Me.btnRemove.Location = New System.Drawing.Point(336, 566)
+        Me.btnRemove.Location = New System.Drawing.Point(378, 708)
         Me.btnRemove.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRemove.Name = "btnRemove"
-        Me.btnRemove.Size = New System.Drawing.Size(139, 48)
+        Me.btnRemove.Size = New System.Drawing.Size(156, 60)
         Me.btnRemove.TabIndex = 9
         Me.btnRemove.Text = "Remove Member"
         Me.btnRemove.UseVisualStyleBackColor = True
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(169, 566)
+        Me.btnAdd.Location = New System.Drawing.Point(190, 708)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(139, 48)
+        Me.btnAdd.Size = New System.Drawing.Size(156, 60)
         Me.btnAdd.TabIndex = 8
         Me.btnAdd.Text = "Add Member..."
         Me.btnAdd.UseVisualStyleBackColor = True
@@ -282,11 +282,11 @@ Partial Class frmRoles
         'grpNew
         '
         Me.grpNew.Controls.Add(Me.chkNew)
-        Me.grpNew.Location = New System.Drawing.Point(12, 76)
+        Me.grpNew.Location = New System.Drawing.Point(14, 95)
         Me.grpNew.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.grpNew.Name = "grpNew"
         Me.grpNew.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.grpNew.Size = New System.Drawing.Size(133, 95)
+        Me.grpNew.Size = New System.Drawing.Size(150, 119)
         Me.grpNew.TabIndex = 13
         Me.grpNew.TabStop = False
         Me.grpNew.Text = "New Role"
@@ -294,10 +294,10 @@ Partial Class frmRoles
         'chkNew
         '
         Me.chkNew.AutoSize = True
-        Me.chkNew.Location = New System.Drawing.Point(5, 36)
+        Me.chkNew.Location = New System.Drawing.Point(6, 45)
         Me.chkNew.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.chkNew.Name = "chkNew"
-        Me.chkNew.Size = New System.Drawing.Size(119, 21)
+        Me.chkNew.Size = New System.Drawing.Size(136, 24)
         Me.chkNew.TabIndex = 0
         Me.chkNew.Text = "Add New Role"
         Me.chkNew.UseVisualStyleBackColor = True
@@ -305,53 +305,73 @@ Partial Class frmRoles
         'grpRoles
         '
         Me.grpRoles.Controls.Add(Me.lstRoles)
-        Me.grpRoles.Location = New System.Drawing.Point(12, 182)
+        Me.grpRoles.Location = New System.Drawing.Point(14, 228)
         Me.grpRoles.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.grpRoles.Name = "grpRoles"
         Me.grpRoles.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.grpRoles.Size = New System.Drawing.Size(277, 341)
+        Me.grpRoles.Size = New System.Drawing.Size(312, 426)
         Me.grpRoles.TabIndex = 14
         Me.grpRoles.TabStop = False
         Me.grpRoles.Text = "Roles"
         '
+        'lstRoles
+        '
+        Me.lstRoles.FormattingEnabled = True
+        Me.lstRoles.ItemHeight = 20
+        Me.lstRoles.Location = New System.Drawing.Point(7, 46)
+        Me.lstRoles.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.lstRoles.Name = "lstRoles"
+        Me.lstRoles.Size = New System.Drawing.Size(134, 104)
+        Me.lstRoles.TabIndex = 0
+        '
         'grpEdit
         '
+        Me.grpEdit.Controls.Add(Me.btnSave)
+        Me.grpEdit.Controls.Add(Me.btnCancel)
         Me.grpEdit.Controls.Add(Me.txtDesc)
         Me.grpEdit.Controls.Add(Me.Label4)
         Me.grpEdit.Controls.Add(Me.txtRoleID)
         Me.grpEdit.Controls.Add(Me.Label1)
-        Me.grpEdit.Location = New System.Drawing.Point(347, 182)
+        Me.grpEdit.Location = New System.Drawing.Point(390, 228)
         Me.grpEdit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.grpEdit.Name = "grpEdit"
         Me.grpEdit.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.grpEdit.Size = New System.Drawing.Size(300, 341)
+        Me.grpEdit.Size = New System.Drawing.Size(338, 426)
         Me.grpEdit.TabIndex = 15
         Me.grpEdit.TabStop = False
         Me.grpEdit.Text = "Edit Roles"
         '
+        'txtDesc
+        '
+        Me.txtDesc.Location = New System.Drawing.Point(22, 124)
+        Me.txtDesc.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtDesc.Name = "txtDesc"
+        Me.txtDesc.Size = New System.Drawing.Size(310, 26)
+        Me.txtDesc.TabIndex = 3
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(16, 60)
+        Me.Label4.Location = New System.Drawing.Point(18, 75)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 17)
+        Me.Label4.Size = New System.Drawing.Size(89, 20)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Description"
         '
         'txtRoleID
         '
-        Me.txtRoleID.Location = New System.Drawing.Point(109, 25)
+        Me.txtRoleID.Location = New System.Drawing.Point(123, 31)
         Me.txtRoleID.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtRoleID.Name = "txtRoleID"
-        Me.txtRoleID.Size = New System.Drawing.Size(100, 22)
+        Me.txtRoleID.Size = New System.Drawing.Size(112, 26)
         Me.txtRoleID.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(16, 28)
+        Me.Label1.Location = New System.Drawing.Point(18, 35)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(54, 17)
+        Me.Label1.Size = New System.Drawing.Size(63, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Role ID"
         '
@@ -359,59 +379,44 @@ Partial Class frmRoles
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sslStatus})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 636)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 796)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(665, 25)
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 16, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(748, 30)
         Me.StatusStrip1.TabIndex = 16
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'sslStatus
         '
         Me.sslStatus.Name = "sslStatus"
-        Me.sslStatus.Size = New System.Drawing.Size(153, 20)
+        Me.sslStatus.Size = New System.Drawing.Size(180, 25)
         Me.sslStatus.Text = "ToolStripStatusLabel1"
-        '
-        'txtDesc
-        '
-        Me.txtDesc.Location = New System.Drawing.Point(89, 109)
-        Me.txtDesc.Name = "txtDesc"
-        Me.txtDesc.Size = New System.Drawing.Size(100, 22)
-        Me.txtDesc.TabIndex = 3
-        '
-        'lstRoles
-        '
-        Me.lstRoles.FormattingEnabled = True
-        Me.lstRoles.ItemHeight = 16
-        Me.lstRoles.Location = New System.Drawing.Point(6, 37)
-        Me.lstRoles.Name = "lstRoles"
-        Me.lstRoles.Size = New System.Drawing.Size(120, 84)
-        Me.lstRoles.TabIndex = 0
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(295, 262)
+        Me.btnSave.Location = New System.Drawing.Point(151, 381)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave.Size = New System.Drawing.Size(84, 29)
         Me.btnSave.TabIndex = 17
-        Me.btnSave.Text = "Button2"
+        Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(303, 270)
+        Me.btnCancel.Location = New System.Drawing.Point(252, 381)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancel.Size = New System.Drawing.Size(84, 29)
         Me.btnCancel.TabIndex = 18
-        Me.btnCancel.Text = "Button2"
+        Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'frmRoles
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(665, 661)
-        Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.btnSave)
+        Me.ClientSize = New System.Drawing.Size(748, 826)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.grpEdit)
         Me.Controls.Add(Me.grpRoles)

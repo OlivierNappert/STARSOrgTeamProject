@@ -5,6 +5,7 @@ Public Class cMemberRole
     Private _Ukid As Integer
     Private _mstrRoleID As String
     Private _mstrSemesterID As String
+    Private _IsNewRole As Boolean
 
     Public Sub New()
         _mstrPID = ""
@@ -44,6 +45,15 @@ Public Class cMemberRole
             _mstrPID = value
         End Set
     End Property
+
+    Public Property IsNewRole As Boolean
+        Get
+            Return _IsNewRole
+        End Get
+        Set(blnVal As Boolean)
+            IsNewRole = blnVal
+        End Set
+    End Property
     Public ReadOnly Property GetSaveParameters() As ArrayList
         Get
             Dim params As New ArrayList
@@ -58,7 +68,7 @@ Public Class cMemberRole
 
     Public Function Save() As Integer
         'return -1 if the ID already exists (and we can't create a new record with duplicate ID)
-        If IsNewRole Then
+        If _IsNewRole Then
             Dim params As New ArrayList
             params.Add(New SqlParameter("roleID", _mstrRoleID))
             Dim strRes As String = myDB.GetSingleValueFromSP("sp_CheckRoleIDExists", params)

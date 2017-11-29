@@ -68,7 +68,6 @@ Public Class CDB
                 dr.Close()
                 Return -1 'no Data
             End If
-
         End If
         Return -2 'failed to connect to db
     End Function
@@ -77,7 +76,6 @@ Public Class CDB
         If Not OpenDB() Then
             'error log this better
             Return Nothing
-
         End If
         Dim sqlComm As New SqlCommand(strSP, objSQLConn) 'command object needs the command and the connection
         Dim sqlDA As SqlDataAdapter
@@ -105,7 +103,7 @@ Public Class CDB
         Try
             If Not params Is Nothing Then
                 For Each p As SqlParameter In params
-
+                    sqlComm.Parameters.Add(p)
                 Next
             End If
             Return sqlComm.ExecuteNonQuery

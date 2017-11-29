@@ -135,10 +135,6 @@ Public Class frmRoles
         LoadRoles()
         chkNew.Checked = False
         grpRoles.Enabled = True 'in case it was disabled for a new record
-
-
-
-
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
