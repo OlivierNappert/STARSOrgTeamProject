@@ -47,6 +47,7 @@ Partial Class frmMembers
         Me.txtVal = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.grpEdit = New System.Windows.Forms.GroupBox()
+        Me.ptbPhoto = New System.Windows.Forms.PictureBox()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.txtMemberID = New System.Windows.Forms.TextBox()
         Me.mskPhone = New System.Windows.Forms.MaskedTextBox()
@@ -55,13 +56,13 @@ Partial Class frmMembers
         Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.txtMiddleName = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.btnOpen = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnOpen = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.grpMemberList = New System.Windows.Forms.GroupBox()
         Me.dgrMembers = New System.Windows.Forms.DataGridView()
@@ -79,6 +80,7 @@ Partial Class frmMembers
         Me.ToolStrip1.SuspendLayout()
         Me.grpSearch.SuspendLayout()
         Me.grpEdit.SuspendLayout()
+        CType(Me.ptbPhoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpMemberList.SuspendLayout()
         CType(Me.dgrMembers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.errP, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -304,6 +306,7 @@ Partial Class frmMembers
         '
         'grpEdit
         '
+        Me.grpEdit.Controls.Add(Me.ptbPhoto)
         Me.grpEdit.Controls.Add(Me.btnCancel)
         Me.grpEdit.Controls.Add(Me.txtMemberID)
         Me.grpEdit.Controls.Add(Me.mskPhone)
@@ -312,26 +315,37 @@ Partial Class frmMembers
         Me.grpEdit.Controls.Add(Me.txtFirstName)
         Me.grpEdit.Controls.Add(Me.txtMiddleName)
         Me.grpEdit.Controls.Add(Me.Label9)
+        Me.grpEdit.Controls.Add(Me.btnOpen)
         Me.grpEdit.Controls.Add(Me.Label8)
         Me.grpEdit.Controls.Add(Me.Label7)
         Me.grpEdit.Controls.Add(Me.Label6)
         Me.grpEdit.Controls.Add(Me.Label5)
         Me.grpEdit.Controls.Add(Me.Label4)
         Me.grpEdit.Controls.Add(Me.Label3)
-        Me.grpEdit.Controls.Add(Me.btnOpen)
         Me.grpEdit.Controls.Add(Me.btnSave)
         Me.grpEdit.Location = New System.Drawing.Point(650, 68)
         Me.grpEdit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.grpEdit.Name = "grpEdit"
         Me.grpEdit.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.grpEdit.Size = New System.Drawing.Size(368, 482)
+        Me.grpEdit.Size = New System.Drawing.Size(368, 657)
         Me.grpEdit.TabIndex = 3
         Me.grpEdit.TabStop = False
         Me.grpEdit.Text = "Edit Members"
         '
+        'ptbPhoto
+        '
+        Me.ptbPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ptbPhoto.InitialImage = Nothing
+        Me.ptbPhoto.Location = New System.Drawing.Point(209, 361)
+        Me.ptbPhoto.Name = "ptbPhoto"
+        Me.ptbPhoto.Size = New System.Drawing.Size(149, 170)
+        Me.ptbPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ptbPhoto.TabIndex = 25
+        Me.ptbPhoto.TabStop = False
+        '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(208, 429)
+        Me.btnCancel.Location = New System.Drawing.Point(209, 604)
         Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(152, 43)
@@ -391,6 +405,15 @@ Partial Class frmMembers
         Me.Label9.TabIndex = 14
         Me.Label9.Text = "Photo:"
         '
+        'btnOpen
+        '
+        Me.btnOpen.Location = New System.Drawing.Point(16, 498)
+        Me.btnOpen.Name = "btnOpen"
+        Me.btnOpen.Size = New System.Drawing.Size(140, 33)
+        Me.btnOpen.TabIndex = 7
+        Me.btnOpen.Text = "Open..."
+        Me.btnOpen.UseVisualStyleBackColor = True
+        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -445,18 +468,9 @@ Partial Class frmMembers
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Member ID:"
         '
-        'btnOpen
-        '
-        Me.btnOpen.Location = New System.Drawing.Point(141, 355)
-        Me.btnOpen.Name = "btnOpen"
-        Me.btnOpen.Size = New System.Drawing.Size(220, 33)
-        Me.btnOpen.TabIndex = 7
-        Me.btnOpen.Text = "Open..."
-        Me.btnOpen.UseVisualStyleBackColor = True
-        '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(12, 429)
+        Me.btnSave.Location = New System.Drawing.Point(13, 604)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(152, 43)
@@ -469,7 +483,7 @@ Partial Class frmMembers
         Me.grpMemberList.Controls.Add(Me.dgrMembers)
         Me.grpMemberList.Location = New System.Drawing.Point(13, 245)
         Me.grpMemberList.Name = "grpMemberList"
-        Me.grpMemberList.Size = New System.Drawing.Size(629, 305)
+        Me.grpMemberList.Size = New System.Drawing.Size(629, 480)
         Me.grpMemberList.TabIndex = 4
         Me.grpMemberList.TabStop = False
         Me.grpMemberList.Text = "Member list"
@@ -484,7 +498,8 @@ Partial Class frmMembers
         Me.dgrMembers.Name = "dgrMembers"
         Me.dgrMembers.ReadOnly = True
         Me.dgrMembers.RowTemplate.Height = 28
-        Me.dgrMembers.Size = New System.Drawing.Size(614, 269)
+        Me.dgrMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgrMembers.Size = New System.Drawing.Size(614, 444)
         Me.dgrMembers.TabIndex = 0
         '
         'errP
@@ -493,7 +508,7 @@ Partial Class frmMembers
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(859, 559)
+        Me.btnClose.Location = New System.Drawing.Point(859, 734)
         Me.btnClose.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(152, 43)
@@ -564,7 +579,7 @@ Partial Class frmMembers
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sslStatus})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 607)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 782)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 16, 0)
         Me.StatusStrip1.Size = New System.Drawing.Size(1031, 30)
@@ -579,11 +594,11 @@ Partial Class frmMembers
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(662, 560)
+        Me.btnClear.Location = New System.Drawing.Point(662, 735)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(152, 43)
-        Me.btnClear.TabIndex = 18
+        Me.btnClear.TabIndex = 6
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
@@ -591,7 +606,7 @@ Partial Class frmMembers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1031, 637)
+        Me.ClientSize = New System.Drawing.Size(1031, 812)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.grpNew)
@@ -602,6 +617,7 @@ Partial Class frmMembers
         Me.Controls.Add(Me.grpSearch)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Name = "frmMembers"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Membership Management"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
@@ -609,6 +625,7 @@ Partial Class frmMembers
         Me.grpSearch.PerformLayout()
         Me.grpEdit.ResumeLayout(False)
         Me.grpEdit.PerformLayout()
+        CType(Me.ptbPhoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpMemberList.ResumeLayout(False)
         CType(Me.dgrMembers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.errP, System.ComponentModel.ISupportInitialize).EndInit()
@@ -676,4 +693,5 @@ Partial Class frmMembers
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents sslStatus As ToolStripStatusLabel
     Friend WithEvents btnClear As Button
+    Friend WithEvents ptbPhoto As PictureBox
 End Class
