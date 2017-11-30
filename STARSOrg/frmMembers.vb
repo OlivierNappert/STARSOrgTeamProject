@@ -6,6 +6,7 @@ Public Class frmMembers
     Private sqlDA As SqlDataAdapter
     Private dt As DataTable
     Private photoPath As String
+    Private blnLoading As Boolean
 
     Private Sub tsbProxy_MouseEnter(sender As Object, e As EventArgs) Handles tsbEvents.MouseEnter, tsbEvents.MouseEnter, tsbHelp.MouseEnter, tsbHome.MouseEnter, tsbLogOut.MouseEnter, tsbMember.MouseEnter, tsbRole.MouseEnter, tsbRSVP.MouseEnter, tsbSemester.MouseEnter, tsbTutor.MouseEnter
         'we need to do this only because we are not putting our images in the image proporty, but instead we are using 
@@ -37,6 +38,7 @@ Public Class frmMembers
 
     Private Sub LoadData()
         Dim objReader As SqlDataReader
+        blnLoading = True
 
         cboMembers.Items.Clear()
 
@@ -49,21 +51,15 @@ Public Class frmMembers
         ModDB.objSQLCommand.CommandType = CommandType.StoredProcedure
 
         sqlDA = myDB.GetDataAdapterBySp("dbo.sp_getAllMembers", Nothing)
+
         dt = New DataTable
         sqlDA.Fill(dt)
+
         dgrMembers.DataSource = dt
-        'dgrMembers.AutoGenerateColumns = True
+        dgrMembers.AutoGenerateColumns = True
+        dgrMembers.Rows(0).Cells(0).Selected = False
 
         objReader = objMembers.GetAllMembers()
-
-        'dgrMembers.Columns.RemoveAt(1)
-        'Dim imgCol = New DataGridViewImageColumn
-        ' imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch
-        ' dgrMembers.Columns.Add(imgCol)
-
-        'For Each row As DataGridViewRow In dgrMembers.Rows
-        'Row.Cells(6).Value = Image.FromFile("C:\Users\Oliver\Pictures\bqwfzGW.png")
-        ' Next
 
         Try
             Do While objReader.Read()
@@ -74,6 +70,7 @@ Public Class frmMembers
             MessageBox.Show("Error in frmMembers:LoadData", "Error")
         End Try
         objReader.Close()
+        blnLoading = False
     End Sub
 
     Private Sub LoadSelectedMember()
@@ -87,6 +84,9 @@ Public Class frmMembers
                 txtEmail.Text = .Email
                 mskPhone.Text = .Phone
                 photoPath = .PhotoPath
+                If photoPath IsNot Nothing And photoPath <> "" Then
+                    ptbPhoto.Image = Image.FromFile(photoPath)
+                End If
             End With
         Catch ex As Exception
             MessageBox.Show("Error loading member in frmMembers:LoadSelectedMember", "Error")
@@ -167,6 +167,7 @@ Public Class frmMembers
         If cboMembers.SelectedIndex = -1 Then
             Exit Sub
         End If
+        ptbPhoto.Image = Nothing
         chkNew.Checked = False
         LoadSelectedMember()
         grpEdit.Enabled = True
@@ -202,6 +203,7 @@ Public Class frmMembers
         End If
 
         photoPath = ofdOpenPhoto.FileName
+        ptbPhoto.Image = Image.FromFile(photoPath)
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
@@ -323,5 +325,41 @@ Public Class frmMembers
         cboMembers.SelectedIndex = -1
         sslStatus.Text = ""
         errP.Clear()
+    End Sub
+
+    Private Sub dgrMembers_SelectionChanged(sender As Object, e As EventArgs) Handles dgrMembers.SelectionChanged
+        If blnLoading Then
+            Exit Sub
+        End If
+
+        Dim dgv = CType(sender, DataGridView)
+        If dgv Is Nothing Then
+            Exit Sub
+        End If
+
+        ptbPhoto.Image = Nothing
+        chkNew.Checked = False
+
+        If dgv.CurrentRow.Selected Then
+            Try
+                objMembers.GetMemberById(dgv.CurrentRow.Cells("ID").Value.ToString())
+                With objMembers.CurrentObject
+                    txtMemberID.Text = .PID
+                    txtFirstName.Text = .FName
+                    txtMiddleName.Text = .ML
+                    txtLastName.Text = .LNAME
+                    txtEmail.Text = .Email
+                    mskPhone.Text = .Phone
+                    photoPath = .PhotoPath
+                    If photoPath IsNot Nothing And photoPath <> "" Then
+                        ptbPhoto.Image = Image.FromFile(photoPath)
+                    End If
+                End With
+                grpEdit.Enabled = True
+                grpNew.Enabled = False
+            Catch ex As Exception
+                MessageBox.Show("Error loading member in frmMembers:LoadSelectedMember", "Error")
+            End Try
+        End If
     End Sub
 End Class
