@@ -245,7 +245,7 @@ Partial Class frmEventRSVP
         Me.lsbEventRSVP.FormattingEnabled = True
         Me.lsbEventRSVP.Location = New System.Drawing.Point(26, 19)
         Me.lsbEventRSVP.Name = "lsbEventRSVP"
-        Me.lsbEventRSVP.Size = New System.Drawing.Size(377, 225)
+        Me.lsbEventRSVP.Size = New System.Drawing.Size(254, 225)
         Me.lsbEventRSVP.TabIndex = 8
         '
         'frmEventRSVP

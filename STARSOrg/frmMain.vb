@@ -1,11 +1,13 @@
 ﻿Public Class frmMain
     Private RoleInfo As frmRoles
     Private MembersInfo As frmMembers
+    Private EventInfo As frmEventManager
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'instantiate a form object for each form in the application
         RoleInfo = New frmRoles
         MembersInfo = New frmMembers
+        Eventinfo = New frmEventManager
         RoleInfo.Hide()
         MembersInfo.Hide()
     End Sub
