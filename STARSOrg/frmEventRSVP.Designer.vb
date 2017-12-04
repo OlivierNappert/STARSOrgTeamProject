@@ -43,10 +43,9 @@ Partial Class frmEventRSVP
         Me.tsbTutor = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btnRSVP = New System.Windows.Forms.Button()
-        Me.dgrEventRSVP = New System.Windows.Forms.DataGridView()
+        Me.lsbEventRSVP = New System.Windows.Forms.ListBox()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.dgrEventRSVP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -57,7 +56,7 @@ Partial Class frmEventRSVP
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbHome, Me.ToolStripSeparator6, Me.tsbMember, Me.ToolStripSeparator5, Me.tsbRole, Me.ToolStripSeparator2, Me.tsbEvents, Me.ToolStripSeparator3, Me.tsbRSVP, Me.ToolStripSeparator1, Me.ToolStripButton8, Me.ToolStripSeparator4, Me.tsbSemester, Me.tsbHelp, Me.ToolStripSeparator8, Me.ToolStripSeparator7, Me.tsbLogOut, Me.tsbTutor})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1060, 41)
+        Me.ToolStrip1.Size = New System.Drawing.Size(684, 41)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -223,37 +222,37 @@ Partial Class frmEventRSVP
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.lsbEventRSVP)
         Me.GroupBox3.Controls.Add(Me.btnRSVP)
-        Me.GroupBox3.Controls.Add(Me.dgrEventRSVP)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 79)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1030, 339)
+        Me.GroupBox3.Size = New System.Drawing.Size(515, 339)
         Me.GroupBox3.TabIndex = 5
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Event RSVP"
         '
         'btnRSVP
         '
-        Me.btnRSVP.Location = New System.Drawing.Point(90, 288)
+        Me.btnRSVP.Location = New System.Drawing.Point(149, 250)
         Me.btnRSVP.Name = "btnRSVP"
         Me.btnRSVP.Size = New System.Drawing.Size(112, 33)
         Me.btnRSVP.TabIndex = 7
         Me.btnRSVP.Text = "RSVP"
         Me.btnRSVP.UseVisualStyleBackColor = True
         '
-        'dgrEventRSVP
+        'lsbEventRSVP
         '
-        Me.dgrEventRSVP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgrEventRSVP.Location = New System.Drawing.Point(14, 21)
-        Me.dgrEventRSVP.Name = "dgrEventRSVP"
-        Me.dgrEventRSVP.Size = New System.Drawing.Size(1004, 230)
-        Me.dgrEventRSVP.TabIndex = 0
+        Me.lsbEventRSVP.FormattingEnabled = True
+        Me.lsbEventRSVP.Location = New System.Drawing.Point(26, 19)
+        Me.lsbEventRSVP.Name = "lsbEventRSVP"
+        Me.lsbEventRSVP.Size = New System.Drawing.Size(254, 225)
+        Me.lsbEventRSVP.TabIndex = 8
         '
         'frmEventRSVP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1060, 442)
+        Me.ClientSize = New System.Drawing.Size(684, 442)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Name = "frmEventRSVP"
@@ -261,7 +260,6 @@ Partial Class frmEventRSVP
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
-        CType(Me.dgrEventRSVP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -287,5 +285,5 @@ Partial Class frmEventRSVP
     Friend WithEvents tsbTutor As ToolStripButton
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents btnRSVP As Button
-    Friend WithEvents dgrEventRSVP As DataGridView
+    Friend WithEvents lsbEventRSVP As ListBox
 End Class

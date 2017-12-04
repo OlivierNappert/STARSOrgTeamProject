@@ -107,7 +107,6 @@ Public Class cMember
             params.Add(New SqlParameter("email", _rstrEmail))
             params.Add(New SqlParameter("phone", _rstrPhone))
             params.Add(New SqlParameter("photoPath", _rstrPhotoPath))
-            params.Add(New SqlParameter("newMember", _IsNewMember))
             Return params
         End Get
     End Property
@@ -117,12 +116,14 @@ Public Class cMember
         If IsNewMember Then
             Dim params As New ArrayList
             params.Add(New SqlParameter("pid", _rstrPID))
-            Dim strRes As String = myDB.GetSingleValueFromSP("sp_CheckPIDExists", params)
-            If Not strRes = 0 Then
+            Dim strRes As String = myDB.GetSingleValueFromSP("sp_checkPIDExists", params)
+            If Not strRes = -1 Then
                 Return -1 'This record already exists
             End If
+            Return myDB.ExecSP("sp_addNewMember", GetSaveParameters()) 'Result of 0 means success
+        Else
+            'If not a new member, or it is new and has a unique ID, then do the save (update or insert)
+            Return myDB.ExecSP("sp_updateMember", GetSaveParameters()) 'Result of 0 means success
         End If
-        'If not a new member, or it is new and has a unique ID, then do the save (update or insert)
-        Return myDB.ExecSP("sp_SaveMember", GetSaveParameters()) 'Result of 0 means success
     End Function
 End Class

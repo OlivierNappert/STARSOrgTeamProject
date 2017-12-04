@@ -124,6 +124,7 @@ Partial Class frmNewUser
         '
         'cboSecurityPriv
         '
+        Me.cboSecurityPriv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSecurityPriv.FormattingEnabled = True
         Me.cboSecurityPriv.Items.AddRange(New Object() {"MEMBER", "OFFICER", "ADMIN"})
         Me.cboSecurityPriv.Location = New System.Drawing.Point(15, 276)

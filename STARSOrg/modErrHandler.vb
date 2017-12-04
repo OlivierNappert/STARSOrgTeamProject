@@ -8,7 +8,6 @@
             obj.Focus()
             Return False
         Else
-            errP.SetError(obj, "")
             Return True
         End If
     End Function
@@ -19,7 +18,6 @@
             errP.SetError(obj, "You must enter a numeric value here")
             Return False
         Else
-            errP.SetError(obj, "")
             Return True
         End If
     End Function
@@ -30,7 +28,6 @@
             errP.SetError(obj, "You must enter a valid date here")
             Return False
         Else
-            errP.SetError(obj, "")
             Return True
         End If
     End Function
@@ -41,7 +38,6 @@
             errP.SetError(obj, "You must make a selection here")
             Return False
         Else
-            errP.SetError(obj, "")
             Return True
         End If
     End Function
@@ -52,7 +48,6 @@
             errP.SetError(obj, "You must make a selection here")
             Return False
         Else
-            errP.SetError(obj, "")
             Return True
         End If
 
@@ -64,7 +59,6 @@
             errP.SetError(obj, "You must make a selection here")
             Return False
         Else
-            errP.SetError(obj, "")
             Return True
         End If
     End Function
