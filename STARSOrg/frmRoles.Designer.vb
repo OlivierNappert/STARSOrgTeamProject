@@ -48,14 +48,14 @@ Partial Class frmRoles
         Me.grpNew = New System.Windows.Forms.GroupBox()
         Me.chkNew = New System.Windows.Forms.CheckBox()
         Me.grpRoles = New System.Windows.Forms.GroupBox()
+        Me.lstRoles = New System.Windows.Forms.ListBox()
         Me.grpEdit = New System.Windows.Forms.GroupBox()
+        Me.txtDesc = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtRoleID = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.sslStatus = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.txtDesc = New System.Windows.Forms.TextBox()
-        Me.lstRoles = New System.Windows.Forms.ListBox()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.ToolStrip1.SuspendLayout()
@@ -314,8 +314,19 @@ Partial Class frmRoles
         Me.grpRoles.TabStop = False
         Me.grpRoles.Text = "Roles"
         '
+        'lstRoles
+        '
+        Me.lstRoles.FormattingEnabled = True
+        Me.lstRoles.ItemHeight = 16
+        Me.lstRoles.Location = New System.Drawing.Point(6, 37)
+        Me.lstRoles.Name = "lstRoles"
+        Me.lstRoles.Size = New System.Drawing.Size(232, 228)
+        Me.lstRoles.TabIndex = 0
+        '
         'grpEdit
         '
+        Me.grpEdit.Controls.Add(Me.btnSave)
+        Me.grpEdit.Controls.Add(Me.btnCancel)
         Me.grpEdit.Controls.Add(Me.txtDesc)
         Me.grpEdit.Controls.Add(Me.Label4)
         Me.grpEdit.Controls.Add(Me.txtRoleID)
@@ -328,6 +339,13 @@ Partial Class frmRoles
         Me.grpEdit.TabIndex = 15
         Me.grpEdit.TabStop = False
         Me.grpEdit.Text = "Edit Roles"
+        '
+        'txtDesc
+        '
+        Me.txtDesc.Location = New System.Drawing.Point(19, 89)
+        Me.txtDesc.Name = "txtDesc"
+        Me.txtDesc.Size = New System.Drawing.Size(254, 22)
+        Me.txtDesc.TabIndex = 3
         '
         'Label4
         '
@@ -343,7 +361,7 @@ Partial Class frmRoles
         Me.txtRoleID.Location = New System.Drawing.Point(109, 25)
         Me.txtRoleID.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtRoleID.Name = "txtRoleID"
-        Me.txtRoleID.Size = New System.Drawing.Size(100, 22)
+        Me.txtRoleID.Size = New System.Drawing.Size(164, 22)
         Me.txtRoleID.TabIndex = 1
         '
         'Label1
@@ -371,38 +389,22 @@ Partial Class frmRoles
         Me.sslStatus.Size = New System.Drawing.Size(153, 20)
         Me.sslStatus.Text = "ToolStripStatusLabel1"
         '
-        'txtDesc
-        '
-        Me.txtDesc.Location = New System.Drawing.Point(89, 109)
-        Me.txtDesc.Name = "txtDesc"
-        Me.txtDesc.Size = New System.Drawing.Size(100, 22)
-        Me.txtDesc.TabIndex = 3
-        '
-        'lstRoles
-        '
-        Me.lstRoles.FormattingEnabled = True
-        Me.lstRoles.ItemHeight = 16
-        Me.lstRoles.Location = New System.Drawing.Point(6, 37)
-        Me.lstRoles.Name = "lstRoles"
-        Me.lstRoles.Size = New System.Drawing.Size(120, 84)
-        Me.lstRoles.TabIndex = 0
-        '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(295, 262)
+        Me.btnSave.Location = New System.Drawing.Point(20, 136)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
         Me.btnSave.TabIndex = 17
-        Me.btnSave.Text = "Button2"
+        Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(303, 270)
+        Me.btnCancel.Location = New System.Drawing.Point(198, 136)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 18
-        Me.btnCancel.Text = "Button2"
+        Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'frmRoles
@@ -410,8 +412,6 @@ Partial Class frmRoles
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(665, 661)
-        Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.grpEdit)
         Me.Controls.Add(Me.grpRoles)
