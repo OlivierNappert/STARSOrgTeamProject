@@ -57,7 +57,6 @@ Public Class frmMembers
 
         dgrMembers.DataSource = dt
         dgrMembers.AutoGenerateColumns = True
-        dgrMembers.Rows(0).Cells(0).Selected = False
 
         objReader = objMembers.GetAllMembers()
 
@@ -156,9 +155,11 @@ Public Class frmMembers
             cboMembers.SelectedIndex = -1
             objMembers.CreateNewMember()
             sslStatus.Text = ""
+            grpMemberList.Enabled = False
         Else
             grpSelect.Enabled = True
             grpEdit.Enabled = False
+            grpMemberList.Enabled = True
             objMembers.CurrentObject.IsNewMember = False
         End If
     End Sub
@@ -169,6 +170,7 @@ Public Class frmMembers
         End If
         ptbPhoto.Image = Nothing
         chkNew.Checked = False
+        grpNew.Enabled = False
         LoadSelectedMember()
         grpEdit.Enabled = True
     End Sub
@@ -291,7 +293,7 @@ Public Class frmMembers
         Try
             Me.Cursor = Cursors.WaitCursor
             intResult = objMembers.Save()
-            If intResult = 1 Then
+            If intResult = 1 Or intResult = 2 Then
                 sslStatus.Text = "Member record saved"
             End If
             If intResult = -1 Then 'Member ID was not unique
@@ -313,6 +315,7 @@ Public Class frmMembers
         LoadData()
         txtVal.Text = ""
         chkNew.Checked = False
+        grpNew.Enabled = True
         txtMemberID.Clear()
         txtFirstName.Clear()
         txtMiddleName.Text = Nothing
@@ -320,7 +323,9 @@ Public Class frmMembers
         txtEmail.Clear()
         mskPhone.Text = Nothing
         photoPath = Nothing
+        ptbPhoto.Image = Nothing
         grpEdit.Enabled = False
+        grpMemberList.Enabled = True
         cboMembers.Enabled = True
         cboMembers.SelectedIndex = -1
         sslStatus.Text = ""
@@ -361,5 +366,9 @@ Public Class frmMembers
                 MessageBox.Show("Error loading member in frmMembers:LoadSelectedMember", "Error")
             End Try
         End If
+    End Sub
+
+    Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
+
     End Sub
 End Class

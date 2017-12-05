@@ -77,6 +77,7 @@ Partial Class frmMembers
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.sslStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.btnClear = New System.Windows.Forms.Button()
+        Me.btnReport = New System.Windows.Forms.Button()
         Me.ToolStrip1.SuspendLayout()
         Me.grpSearch.SuspendLayout()
         Me.grpEdit.SuspendLayout()
@@ -602,11 +603,22 @@ Partial Class frmMembers
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
+        'btnReport
+        '
+        Me.btnReport.Location = New System.Drawing.Point(13, 735)
+        Me.btnReport.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnReport.Name = "btnReport"
+        Me.btnReport.Size = New System.Drawing.Size(152, 43)
+        Me.btnReport.TabIndex = 19
+        Me.btnReport.Text = "Make report"
+        Me.btnReport.UseVisualStyleBackColor = True
+        '
         'frmMembers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1031, 812)
+        Me.Controls.Add(Me.btnReport)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.grpNew)
@@ -694,4 +706,5 @@ Partial Class frmMembers
     Friend WithEvents sslStatus As ToolStripStatusLabel
     Friend WithEvents btnClear As Button
     Friend WithEvents ptbPhoto As PictureBox
+    Friend WithEvents btnReport As Button
 End Class
