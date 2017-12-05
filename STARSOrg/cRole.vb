@@ -36,7 +36,7 @@ Public Class cRole
             Return _isNewRole
         End Get
         Set(blnVal As Boolean)
-            IsNewRole = blnVal
+            _isNewRole = blnVal
         End Set
     End Property
 #End Region

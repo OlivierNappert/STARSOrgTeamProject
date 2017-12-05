@@ -42,8 +42,8 @@ Partial Class frmEventRSVP
         Me.tsbLogOut = New System.Windows.Forms.ToolStripButton()
         Me.tsbTutor = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.btnRSVP = New System.Windows.Forms.Button()
         Me.lsbEventRSVP = New System.Windows.Forms.ListBox()
+        Me.btnRSVP = New System.Windows.Forms.Button()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
@@ -226,10 +226,18 @@ Partial Class frmEventRSVP
         Me.GroupBox3.Controls.Add(Me.btnRSVP)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 79)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(515, 339)
+        Me.GroupBox3.Size = New System.Drawing.Size(299, 339)
         Me.GroupBox3.TabIndex = 5
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Event RSVP"
+        '
+        'lsbEventRSVP
+        '
+        Me.lsbEventRSVP.FormattingEnabled = True
+        Me.lsbEventRSVP.Location = New System.Drawing.Point(26, 19)
+        Me.lsbEventRSVP.Name = "lsbEventRSVP"
+        Me.lsbEventRSVP.Size = New System.Drawing.Size(254, 225)
+        Me.lsbEventRSVP.TabIndex = 8
         '
         'btnRSVP
         '
@@ -239,14 +247,6 @@ Partial Class frmEventRSVP
         Me.btnRSVP.TabIndex = 7
         Me.btnRSVP.Text = "RSVP"
         Me.btnRSVP.UseVisualStyleBackColor = True
-        '
-        'lsbEventRSVP
-        '
-        Me.lsbEventRSVP.FormattingEnabled = True
-        Me.lsbEventRSVP.Location = New System.Drawing.Point(26, 19)
-        Me.lsbEventRSVP.Name = "lsbEventRSVP"
-        Me.lsbEventRSVP.Size = New System.Drawing.Size(254, 225)
-        Me.lsbEventRSVP.TabIndex = 8
         '
         'frmEventRSVP
         '

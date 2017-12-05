@@ -51,7 +51,7 @@ Public Class cMemberRole
             Return _IsNewRole
         End Get
         Set(blnVal As Boolean)
-            IsNewRole = blnVal
+            _IsNewRole = blnVal
         End Set
     End Property
     Public ReadOnly Property GetSaveParameters() As ArrayList

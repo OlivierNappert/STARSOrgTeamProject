@@ -41,7 +41,7 @@ Public Class frmRoles
         Catch ex As Exception
             '      MessageBox.Show("Error in frmRoles:LoadAllRoles",)
         End Try
-        End
+
         objReader.Close()
 
     End Sub
@@ -142,5 +142,15 @@ Public Class frmRoles
         sslStatus.Text = ""
         chkNew.Checked = False
         'errp.clear
+
+        If lstRoles.SelectedIndex <> -1 Then
+            LoadSelectedRecord() 'reload what was selected in case user has messed up the form
+        Else 'disable the edit area - nothing was seleced
+            grpEdit.Enabled = False
+
+        End If
+        blnClearing = False
+        objRoles.CurrentObject.IsNewRole = False
+        grpRoles.Enabled = True
     End Sub
 End Class
