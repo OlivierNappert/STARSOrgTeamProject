@@ -2,14 +2,19 @@
     Private RoleInfo As frmRoles
     Private MembersInfo As frmMembers
     Private EventInfo As frmEventManager
+    Private RSVPInfo As frmEventRSVP
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'instantiate a form object for each form in the application
         RoleInfo = New frmRoles
         MembersInfo = New frmMembers
-        Eventinfo = New frmEventManager
+        EventInfo = New frmEventManager
+        RSVPInfo = New frmEventRSVP
         RoleInfo.Hide()
         MembersInfo.Hide()
+        EventInfo.Hide()
+        RSVPInfo.Hide()
+
     End Sub
 
 
@@ -77,5 +82,13 @@
 
     Private Sub tsbRole_Click(sender As Object, e As EventArgs) Handles tsbRole.Click
         RoleInfo.ShowDialog()
+    End Sub
+
+    Private Sub tsbEvents_Click(sender As Object, e As EventArgs) Handles tsbEvents.Click
+        EventInfo.Show()
+    End Sub
+
+    Private Sub tsbRSVP_Click(sender As Object, e As EventArgs) Handles tsbRSVP.Click
+        RSVPInfo.Show()
     End Sub
 End Class
