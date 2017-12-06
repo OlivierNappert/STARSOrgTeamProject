@@ -76,7 +76,7 @@
       <DependentUpon>Add Member.vb</DependentUpon>
     </Compile>
     <Compile Include="Add Member.vb">
-      <SubType>Form</SubType>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="cAudit.vb" />
     <Compile Include="cAudits.vb" />
@@ -243,7 +243,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\STARS National LOGO.png" />

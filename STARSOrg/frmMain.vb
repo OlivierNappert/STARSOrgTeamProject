@@ -2,6 +2,7 @@
     Private RoleInfo As frmRoles
     Private MembersInfo As frmMembers
     Private EventInfo As frmEventManager
+    Private EventRSVP As frmEventRSVP
     Public CurrentSemesterID As String
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -9,9 +10,12 @@
         RoleInfo = New frmRoles
         MembersInfo = New frmMembers
         EventInfo = New frmEventManager
+        EventRSVP = New frmEventRSVP
         CurrentSemesterID = "fa17"
         RoleInfo.Hide()
         MembersInfo.Hide()
+        EventInfo.Hide()
+        EventRSVP.Hide()
     End Sub
 
 
@@ -79,5 +83,13 @@
 
     Private Sub tsbRole_Click(sender As Object, e As EventArgs) Handles tsbRole.Click
         RoleInfo.ShowDialog()
+    End Sub
+
+    Private Sub tsbEvents_Click(sender As Object, e As EventArgs) Handles tsbEvents.Click
+        EventInfo.Show()
+    End Sub
+
+    Private Sub tsbRSVP_Click(sender As Object, e As EventArgs) Handles tsbRSVP.Click
+        EventRSVP.Show()
     End Sub
 End Class
