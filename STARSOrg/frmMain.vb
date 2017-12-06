@@ -3,7 +3,6 @@
     Private MembersInfo As frmMembers
     Private EventInfo As frmEventManager
     Private EventRSVP As frmEventRSVP
-    Public CurrentSemesterID As String
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'instantiate a form object for each form in the application
@@ -11,7 +10,6 @@
         MembersInfo = New frmMembers
         EventInfo = New frmEventManager
         EventRSVP = New frmEventRSVP
-        CurrentSemesterID = "fa17"
         RoleInfo.Hide()
         MembersInfo.Hide()
         EventInfo.Hide()

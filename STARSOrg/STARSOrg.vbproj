@@ -76,7 +76,7 @@
       <DependentUpon>Add Member.vb</DependentUpon>
     </Compile>
     <Compile Include="Add Member.vb">
-      <SubType>Code</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="cAudit.vb" />
     <Compile Include="cAudits.vb" />

@@ -107,7 +107,7 @@ Public Class cMember
             params.Add(New SqlParameter("email", _rstrEmail))
             params.Add(New SqlParameter("phone", _rstrPhone))
             params.Add(New SqlParameter("photoPath", _rstrPhotoPath))
-            params.Add(New SqlParameter("currentSemester", frmMain.CurrentSemesterID))
+            params.Add(New SqlParameter("currentSemester", CurrentSemesterID))
             Return params
         End Get
     End Property
