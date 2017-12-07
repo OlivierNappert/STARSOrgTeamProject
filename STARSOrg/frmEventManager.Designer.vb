@@ -54,7 +54,7 @@ Partial Class frmEventManager
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtEndDate = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtEventD = New System.Windows.Forms.TextBox()
+        Me.txtEventID = New System.Windows.Forms.TextBox()
         Me.txtStartDate = New System.Windows.Forms.TextBox()
         Me.txtSemesterID = New System.Windows.Forms.TextBox()
         Me.txtEventDescription = New System.Windows.Forms.TextBox()
@@ -319,7 +319,7 @@ Partial Class frmEventManager
         Me.grpEdit.Controls.Add(Me.Label2)
         Me.grpEdit.Controls.Add(Me.txtEndDate)
         Me.grpEdit.Controls.Add(Me.Label1)
-        Me.grpEdit.Controls.Add(Me.txtEventD)
+        Me.grpEdit.Controls.Add(Me.txtEventID)
         Me.grpEdit.Controls.Add(Me.txtStartDate)
         Me.grpEdit.Controls.Add(Me.txtSemesterID)
         Me.grpEdit.Controls.Add(Me.btnAdd)
@@ -373,13 +373,13 @@ Partial Class frmEventManager
         Me.Label1.TabIndex = 24
         Me.Label1.Text = "End Date:"
         '
-        'txtEventD
+        'txtEventID
         '
-        Me.txtEventD.Location = New System.Drawing.Point(108, 18)
-        Me.txtEventD.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtEventD.Name = "txtEventD"
-        Me.txtEventD.Size = New System.Drawing.Size(148, 20)
-        Me.txtEventD.TabIndex = 23
+        Me.txtEventID.Location = New System.Drawing.Point(108, 18)
+        Me.txtEventID.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtEventID.Name = "txtEventID"
+        Me.txtEventID.Size = New System.Drawing.Size(148, 20)
+        Me.txtEventID.TabIndex = 23
         '
         'txtStartDate
         '
@@ -536,7 +536,7 @@ Partial Class frmEventManager
     Friend WithEvents btnAdd As Button
     Friend WithEvents dgrEvent As DataGridView
     Friend WithEvents grpEdit As GroupBox
-    Friend WithEvents txtEventD As TextBox
+    Friend WithEvents txtEventID As TextBox
     Friend WithEvents txtStartDate As TextBox
     Friend WithEvents txtSemesterID As TextBox
     Friend WithEvents txtEventDescription As TextBox
