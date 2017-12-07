@@ -69,6 +69,11 @@ Public Class frmMembers
             MessageBox.Show("Error in frmMembers:LoadData", "Error")
         End Try
         objReader.Close()
+
+        If cboMembers.Items.Count > 0 Then
+            dgrMembers.Rows.Item(0).Selected = False
+        End If
+
         blnLoading = False
     End Sub
 
@@ -328,6 +333,16 @@ Public Class frmMembers
         grpMemberList.Enabled = True
         cboMembers.Enabled = True
         cboMembers.SelectedIndex = -1
+        If cboMembers.Items.Count > 0 Then
+            For Each row As DataGridViewRow In dgrMembers.Rows
+                If row.Selected Then
+                    blnLoading = True
+                    row.Selected = False
+                    blnLoading = False
+                    Exit For
+                End If
+            Next
+        End If
         sslStatus.Text = ""
         errP.Clear()
     End Sub
