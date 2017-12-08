@@ -40,7 +40,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>PID</Value>
+                              <Value>ID</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -81,7 +81,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>FName</Value>
+                              <Value>First Name</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -122,7 +122,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ML</Value>
+                              <Value>Middle Name</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -163,7 +163,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>LNAME</Value>
+                              <Value>Last Name</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -339,7 +339,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>PID</rd:DefaultName>
@@ -372,7 +374,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>FName</rd:DefaultName>
@@ -391,24 +395,26 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ML">
+                    <Textbox Name="MI">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ML.Value</Value>
+                              <Value>=Fields!MI.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ML</rd:DefaultName>
+                      <rd:DefaultName>MI</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -424,24 +430,26 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="LNAME">
+                    <Textbox Name="LName">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!LNAME.Value</Value>
+                              <Value>=Fields!LName.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>LNAME</rd:DefaultName>
+                      <rd:DefaultName>LName</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -471,7 +479,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Email</rd:DefaultName>
@@ -504,7 +514,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Phone</rd:DefaultName>
@@ -537,7 +549,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>PhotoPath</rd:DefaultName>
@@ -579,7 +593,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>membersDataSet</DataSetName>
+        <DataSetName>dataSetMembers</DataSetName>
         <Height>1.2cm</Height>
         <Width>17.5cm</Width>
         <Style>
@@ -605,43 +619,39 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="STARSOrg">
+    <DataSource Name="dataSetMembers">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>069a0c2e-cde1-454d-94a9-62640ff6c0b6</rd:DataSourceID>
+      <rd:DataSourceID>d5f9e1dd-149b-4bcb-a276-9390c0514433</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="membersDataSet">
+    <DataSet Name="dataSetMembers">
       <Query>
-        <DataSourceName>STARSOrg</DataSourceName>
+        <DataSourceName>dataSetMembers</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Email">
-          <DataField>Email</DataField>
+        <Field Name="PID">
+          <DataField>PID</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="FName">
           <DataField>FName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="GetSaveParameters">
-          <DataField>GetSaveParameters</DataField>
-          <rd:TypeName>System.Collections.ArrayList</rd:TypeName>
-        </Field>
-        <Field Name="IsNewMember">
-          <DataField>IsNewMember</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="LNAME">
-          <DataField>LNAME</DataField>
+        <Field Name="LName">
+          <DataField>LName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ML">
-          <DataField>ML</DataField>
+        <Field Name="MI">
+          <DataField>MI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Phone">
@@ -652,18 +662,17 @@
           <DataField>PhotoPath</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="PID">
-          <DataField>PID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>STARSOrg</rd:DataSetName>
-        <rd:TableName>cMember</rd:TableName>
-        <rd:ObjectDataSourceType>STARSOrg.cMember, STARSOrg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:DataSetName>dataSetMembers</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Oliver\Desktop\FIU\Windows\STARSOrgTeamProject\STARSOrg\dataSetMembers.xsd</rd:SchemaPath>
+        <rd:TableName>MEMBER</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>MEMBERTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>2047cb45-8c7d-4e5e-9ca9-af1d544c7b16</rd:ReportID>
+  <rd:ReportID>9ff0c61f-9eff-4952-a5c0-a2248473043c</rd:ReportID>
 </Report>

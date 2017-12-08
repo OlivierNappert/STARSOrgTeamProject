@@ -3,6 +3,7 @@
 Public Class frmMembers
 
     Private objMembers As cMembers
+    Private report As frmMembersReport
     Private sqlDA As SqlDataAdapter
     Private dt As DataTable
     Private photoPath As String
@@ -26,6 +27,8 @@ Public Class frmMembers
 
     Private Sub frmMembers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objMembers = New cMembers
+        report = New frmMembersReport
+        report.Hide()
     End Sub
 
     Private Sub frmMembers_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -384,6 +387,6 @@ Public Class frmMembers
     End Sub
 
     Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
-
+        report.Show()
     End Sub
 End Class
