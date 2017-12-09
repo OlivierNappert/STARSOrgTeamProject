@@ -85,7 +85,7 @@ Public Class frmRoles
             Exit Sub
         End If
         chkNew.Checked = False
-        LoadSelectedRecord()
+        '    LoadSelectedRecord()
         grpEdit.Enabled = True
 
     End Sub
@@ -141,6 +141,28 @@ Public Class frmRoles
         blnClearing = True
         sslStatus.Text = ""
         chkNew.Checked = False
-        'errp.clear
+        errp.clear
+        If lstRoles.SelectedIndex <> -1 Then
+            '   LoadSelectedRecord()
+        Else grpEdit.Enabled = False
+
+        End If
+        blnClearing = False
+        objRoles.CurrentObject.IsNewRole = False
+        grpRoles.Enabled = True
+
+    End Sub
+
+    Private Sub LoadSelectedRecord()
+        Throw New NotImplementedException()
+    End Sub
+
+    Private Sub lstRoles_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles lstRoles.SelectedIndexChanged
+        LoadAllMemberRoles()
+
+    End Sub
+
+    Private Sub LoadAllMemberRoles()
+        Throw New NotImplementedException()
     End Sub
 End Class

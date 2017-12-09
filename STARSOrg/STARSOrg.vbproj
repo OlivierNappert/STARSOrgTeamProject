@@ -47,6 +47,25 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -89,6 +108,7 @@
     <Compile Include="CEventTypes.vb" />
     <Compile Include="cMember.vb" />
     <Compile Include="cMemberRole.vb" />
+    <Compile Include="cMemberRoles.vb" />
     <Compile Include="cMembers.vb" />
     <Compile Include="cRole.vb" />
     <Compile Include="cRoles.vb" />
@@ -161,6 +181,18 @@
     <Compile Include="frmRSVPReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MemberRoleReport.Designer.vb">
+      <DependentUpon>MemberRoleReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MemberRoleReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberRoles.Designer.vb">
+      <DependentUpon>MemberRoles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MemberRoles.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ModDB.vb" />
     <Compile Include="modErrHandler.vb" />
     <Compile Include="modGlobal.vb" />
@@ -218,6 +250,12 @@
     <EmbeddedResource Include="frmRSVPReport.resx">
       <DependentUpon>frmRSVPReport.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MemberRoleReport.resx">
+      <DependentUpon>MemberRoleReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberRoles.resx">
+      <DependentUpon>MemberRoles.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -238,6 +276,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\STARS National LOGO.png" />
   </ItemGroup>
   <ItemGroup>
@@ -272,6 +311,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tutors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

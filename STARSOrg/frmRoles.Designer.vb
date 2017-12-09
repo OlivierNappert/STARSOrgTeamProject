@@ -22,6 +22,7 @@ Partial Class frmRoles
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.tsbHome = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
@@ -50,19 +51,21 @@ Partial Class frmRoles
         Me.grpRoles = New System.Windows.Forms.GroupBox()
         Me.lstRoles = New System.Windows.Forms.ListBox()
         Me.grpEdit = New System.Windows.Forms.GroupBox()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.txtDesc = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtRoleID = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.sslStatus = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.btnSave = New System.Windows.Forms.Button()
-        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.errP = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolStrip1.SuspendLayout()
         Me.grpNew.SuspendLayout()
         Me.grpRoles.SuspendLayout()
         Me.grpEdit.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
+        CType(Me.errP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -340,6 +343,24 @@ Partial Class frmRoles
         Me.grpEdit.TabStop = False
         Me.grpEdit.Text = "Edit Roles"
         '
+        'btnSave
+        '
+        Me.btnSave.Location = New System.Drawing.Point(20, 136)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave.TabIndex = 17
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = True
+        '
+        'btnCancel
+        '
+        Me.btnCancel.Location = New System.Drawing.Point(198, 136)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancel.TabIndex = 18
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
+        '
         'txtDesc
         '
         Me.txtDesc.Location = New System.Drawing.Point(19, 89)
@@ -389,23 +410,9 @@ Partial Class frmRoles
         Me.sslStatus.Size = New System.Drawing.Size(153, 20)
         Me.sslStatus.Text = "ToolStripStatusLabel1"
         '
-        'btnSave
+        'errP
         '
-        Me.btnSave.Location = New System.Drawing.Point(20, 136)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 23)
-        Me.btnSave.TabIndex = 17
-        Me.btnSave.Text = "Save"
-        Me.btnSave.UseVisualStyleBackColor = True
-        '
-        'btnCancel
-        '
-        Me.btnCancel.Location = New System.Drawing.Point(198, 136)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancel.TabIndex = 18
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
+        Me.errP.ContainerControl = Me
         '
         'frmRoles
         '
@@ -433,6 +440,7 @@ Partial Class frmRoles
         Me.grpEdit.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        CType(Me.errP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -474,4 +482,5 @@ Partial Class frmRoles
     Friend WithEvents lstRoles As ListBox
     Friend WithEvents btnSave As Button
     Friend WithEvents btnCancel As Button
+    Friend WithEvents errP As ErrorProvider
 End Class

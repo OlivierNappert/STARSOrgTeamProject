@@ -1,65 +1,67 @@
 ﻿Imports System.Data.SqlClient
 
 
-Public Class cRoles
+Public Class cMemberRoles
     'Represents the ROLE Table and its associated business roles
     'we need to be able to manage a single record
     'retrieves data to and from the database
     'deals with crole
-    Private _Role As cRole
+    Private _MemberRole As cMemberRole
 
     Public Sub New()
-        'instantiate the CRoles object
+        'instantiate the `s object
         'constructor
-        _Role = New cRole
+        _MemberRole = New cMemberRole
 
     End Sub
 
-    Public ReadOnly Property CurrentObject() As cRole
+    Public ReadOnly Property CurrentObject() As cMemberRole
         Get
-            Return _Role
+            Return _MemberRole
         End Get
 
     End Property
 
     Public Sub Clear()
-        _Role = New cRole
+        _MemberRole = New cMemberRole
 
     End Sub
 
     Public Sub CreateNewRole()
         'call this routine when clearing the edit portion of the screen to add a new role
         Clear()
-        _Role.IsNewRole = True
+        _MemberRole.IsNewRole = True
     End Sub
 
     Public Function Save() As Integer
-        Return _Role.Save
+        Return _MemberRole.Save
 
     End Function
     Public Function GetAllRoles() As SqlDataReader
-        Return myDB.GetDataReaderBySP("dbo.sp_getAllRoles", Nothing)
+        Return myDB.GetDataReaderBySP("dbo.sp_getAllMemberRoles", Nothing)
     End Function
 
-    Public Function GetRoleByID(strID As String) As cRole
+    Public Function GetRoleByID(strID As String) As cMemberRole
         Dim params As New ArrayList
         params.Add(New SqlParameter("roleID", strID))
-        FillObject(myDB.GetDataReaderBySP("dbo.sp_GetRoleByID", params))
-        Return _Role
+        FillObject(myDB.GetDataReaderBySP("dbo.sp_GetMemberRoleByID", params))
+        Return _MemberRole
     End Function
 
-    Private Function FillObject(sqldr As SqlDataReader) As cRole
+    Private Function FillObject(sqldr As SqlDataReader) As cMemberRole
         Using sqldr
             If sqldr.Read() Then 'found the role record
-                With _Role
+                With _MemberRole
+                    .PID = sqldr.Item("PID") & ""
                     .RoleID = sqldr.Item("RoleID") & ""
-                    .RoleDescription = sqldr.Item("RoleDescription") & ""
+                    .SemesterID = sqldr.Item("SemesterID") & ""
                 End With
             Else
                 'did not get a matching role record
             End If
         End Using
         sqldr.Close()
-        Return _Role
+        Return _MemberRole
     End Function
 End Class
+
