@@ -13,6 +13,21 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,7 +85,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -108,12 +126,16 @@
     <Compile Include="CEventTypes.vb" />
     <Compile Include="cMember.vb" />
     <Compile Include="cMemberRole.vb" />
-    <Compile Include="cMemberRoles.vb" />
     <Compile Include="cMembers.vb" />
     <Compile Include="cRole.vb" />
     <Compile Include="cRoles.vb" />
     <Compile Include="cSecurities.vb" />
     <Compile Include="cSecurity.vb" />
+    <Compile Include="dataSetMembers.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataSetMembers.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmAdminChoice.designer.vb">
       <DependentUpon>frmAdminChoice.vb</DependentUpon>
     </Compile>
@@ -150,17 +172,22 @@
     <Compile Include="frmLoginChangePass.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMembers.Designer.vb">
       <DependentUpon>frmMembers.vb</DependentUpon>
     </Compile>
     <Compile Include="frmMembers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMembersReport.Designer.vb">
+      <DependentUpon>frmMembersReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMembersReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmNewUser.designer.vb">
@@ -179,18 +206,6 @@
       <DependentUpon>frmRSVPReport.vb</DependentUpon>
     </Compile>
     <Compile Include="frmRSVPReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MemberRoleReport.Designer.vb">
-      <DependentUpon>MemberRoleReport.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MemberRoleReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MemberRoles.Designer.vb">
-      <DependentUpon>MemberRoles.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MemberRoles.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModDB.vb" />
@@ -241,6 +256,9 @@
     <EmbeddedResource Include="frmMembers.resx">
       <DependentUpon>frmMembers.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMembersReport.resx">
+      <DependentUpon>frmMembersReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNewUser.resx">
       <DependentUpon>frmNewUser.vb</DependentUpon>
     </EmbeddedResource>
@@ -250,20 +268,27 @@
     <EmbeddedResource Include="frmRSVPReport.resx">
       <DependentUpon>frmRSVPReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberRoleReport.resx">
-      <DependentUpon>MemberRoleReport.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MemberRoles.resx">
-      <DependentUpon>MemberRoles.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptMembers.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="dataSetMembers.xsc">
+      <DependentUpon>dataSetMembers.xsd</DependentUpon>
+    </None>
+    <None Include="dataSetMembers.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataSetMembers.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dataSetMembers.xss">
+      <DependentUpon>dataSetMembers.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -273,7 +298,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -327,6 +351,18 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

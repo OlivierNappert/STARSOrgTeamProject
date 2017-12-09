@@ -85,7 +85,7 @@ Public Class CEventRSVP
         If isNewUkid Then
             Dim params As New ArrayList
             params.Add(New SqlParameter("ukid", _mstrUkid))
-            Dim strRes As String = myDB.GetSingleValueFromSP("sp_CheckUkidExists", params)
+            Dim strRes As String = myDB.GetSingleValueFromSP("sp_CheckRSVPExists", params)
             If Not strRes = 0 Then
                 Return -1  'not UNIQUE!
             End If

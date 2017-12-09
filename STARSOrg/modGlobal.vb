@@ -15,8 +15,7 @@
     Public Const ACTION_LOGOUT As Integer = 10
     Public intNextAction As Integer
     Public myDB As New CDB
-
-
+    Public CurrentSemesterID As String = "fa17"
 
 
 

@@ -3,6 +3,7 @@
 Public Class frmMembers
 
     Private objMembers As cMembers
+    Private report As frmMembersReport
     Private sqlDA As SqlDataAdapter
     Private dt As DataTable
     Private photoPath As String
@@ -26,6 +27,8 @@ Public Class frmMembers
 
     Private Sub frmMembers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objMembers = New cMembers
+        report = New frmMembersReport
+        report.Hide()
     End Sub
 
     Private Sub frmMembers_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -57,7 +60,6 @@ Public Class frmMembers
 
         dgrMembers.DataSource = dt
         dgrMembers.AutoGenerateColumns = True
-        dgrMembers.Rows(0).Cells(0).Selected = False
 
         objReader = objMembers.GetAllMembers()
 
@@ -70,6 +72,11 @@ Public Class frmMembers
             MessageBox.Show("Error in frmMembers:LoadData", "Error")
         End Try
         objReader.Close()
+
+        If cboMembers.Items.Count > 0 Then
+            dgrMembers.Rows.Item(0).Selected = False
+        End If
+
         blnLoading = False
     End Sub
 
@@ -156,9 +163,11 @@ Public Class frmMembers
             cboMembers.SelectedIndex = -1
             objMembers.CreateNewMember()
             sslStatus.Text = ""
+            grpMemberList.Enabled = False
         Else
             grpSelect.Enabled = True
             grpEdit.Enabled = False
+            grpMemberList.Enabled = True
             objMembers.CurrentObject.IsNewMember = False
         End If
     End Sub
@@ -169,6 +178,7 @@ Public Class frmMembers
         End If
         ptbPhoto.Image = Nothing
         chkNew.Checked = False
+        grpNew.Enabled = False
         LoadSelectedMember()
         grpEdit.Enabled = True
     End Sub
@@ -291,7 +301,7 @@ Public Class frmMembers
         Try
             Me.Cursor = Cursors.WaitCursor
             intResult = objMembers.Save()
-            If intResult = 1 Then
+            If intResult = 1 Or intResult = 2 Then
                 sslStatus.Text = "Member record saved"
             End If
             If intResult = -1 Then 'Member ID was not unique
@@ -313,6 +323,7 @@ Public Class frmMembers
         LoadData()
         txtVal.Text = ""
         chkNew.Checked = False
+        grpNew.Enabled = True
         txtMemberID.Clear()
         txtFirstName.Clear()
         txtMiddleName.Text = Nothing
@@ -320,9 +331,21 @@ Public Class frmMembers
         txtEmail.Clear()
         mskPhone.Text = Nothing
         photoPath = Nothing
+        ptbPhoto.Image = Nothing
         grpEdit.Enabled = False
+        grpMemberList.Enabled = True
         cboMembers.Enabled = True
         cboMembers.SelectedIndex = -1
+        If cboMembers.Items.Count > 0 Then
+            For Each row As DataGridViewRow In dgrMembers.Rows
+                If row.Selected Then
+                    blnLoading = True
+                    row.Selected = False
+                    blnLoading = False
+                    Exit For
+                End If
+            Next
+        End If
         sslStatus.Text = ""
         errP.Clear()
     End Sub
@@ -361,5 +384,9 @@ Public Class frmMembers
                 MessageBox.Show("Error loading member in frmMembers:LoadSelectedMember", "Error")
             End Try
         End If
+    End Sub
+
+    Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
+        report.Show()
     End Sub
 End Class
