@@ -70,7 +70,7 @@ Public Class frmMemberRoles
             '      MessageBox.Show("Error in frmRoles:LoadMemberRoles",)
         End Try
 
-        objReader.Close()
+        '    objReader.Close()
 
     End Sub
     Public Function GetAllRoles() As SqlDataReader
@@ -95,38 +95,38 @@ Public Class frmMemberRoles
 
 
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Dim intResult As Integer
-        Dim blnErrors As Boolean
-        sslStatus.Text = ""
-        'add your valdation from modErrhandler here
-        If blnErrors Then
-            Exit Sub
-        End If
-        'if we get this far, all of the input data is acceptable
-        With objRoles.CurrentObject
-            .RoleID = txtMemberRoleID.Text
-            .RoleDescription = txtDesc.Text
-        End With
-        Try
-            Me.Cursor = Cursors.WaitCursor
-            intResult = objRoles.Save
-            If intResult = 1 Then
-                sslStatus.Text = "Role record saved"
-            End If
-            If intResult = -1 Then 'ID was not unique
-                'messagebox role ID must be unique unable to save this record, warning
-                sslStatus.Text = "Error"
-            End If
-        Catch ex As Exception
-            'messagebox unable to save role record & ex.toString
-        End Try
-        Me.Cursor = Cursors.Default
-        blnReloading = True
-        LoadRoles()
-        chkNew.Checked = False
-        grpRoles.Enabled = True 'in case it was disabled for a new record
-    End Sub
+    'Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    '    Dim intResult As Integer
+    '    Dim blnErrors As Boolean
+    '    sslStatus.Text = ""
+    '    'add your valdation from modErrhandler here
+    '    If blnErrors Then
+    '        Exit Sub
+    '    End If
+    '    'if we get this far, all of the input data is acceptable
+    '    With objMemberRoles
+    '        .PID = txtMemberRoleID.Text
+    '        .RoleDescription = txtDesc.Text
+    '    End With
+    '    Try
+    '        Me.Cursor = Cursors.WaitCursor
+    '        intResult = objRoles.Save
+    '        If intResult = 1 Then
+    '            sslStatus.Text = "Role record saved"
+    '        End If
+    '        If intResult = -1 Then 'ID was not unique
+    '            'messagebox role ID must be unique unable to save this record, warning
+    '            sslStatus.Text = "Error"
+    '        End If
+    '    Catch ex As Exception
+    '        'messagebox unable to save role record & ex.toString
+    '    End Try
+    '    Me.Cursor = Cursors.Default
+    '    blnReloading = True
+    '    LoadRoles()
+    '    chkNew.Checked = False
+    '    grpRoles.Enabled = True 'in case it was disabled for a new record
+    'End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         txtMemberRoleID.Text = ""
