@@ -1,18 +1,28 @@
 ﻿Imports System.Data.SqlClient
 Public Class frmMemberRoles
-    Private currentPID As String
-    Private currentSemester As String
+    Private strCurrentPID As String
+    Private strCurrentSemester As String
+    Private report As frmMembersReport
     Private objMemberRoles As cMemberRoles
+    Private objMembers As cMembers
     Private blnClearing As Boolean
     Private blnReloading As Boolean
     Private objMemberRAL As ArrayList
+    Private strSecRole As String
 
 
     Private Sub frmMemberRoles_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DataSetMembers.MEMBER' table. You can move, or remove it, as needed.
+        Me.MEMBERTableAdapter.Fill(Me.DataSetMembers.MEMBER)
+        loadMembers()
 
         cbo_Semester.SelectedIndex = 0
-        currentSemester = "Fall"
+        strCurrentSemester = "Fall"
         objMemberRoles = New cMemberRoles
+    End Sub
+
+    Private Sub loadMembers()
+
     End Sub
 
     Private Sub tsbProxy_MouseEnter(sender As Object, e As EventArgs) Handles tsbEvents.MouseEnter, tsbTutor.MouseEnter, tsbRSVP.MouseEnter, tsbRole.MouseEnter, tsbMember.MouseEnter, tsbLogOut.MouseEnter, tsbHome.MouseEnter, tsbHelp.MouseEnter
@@ -48,7 +58,7 @@ Public Class frmMemberRoles
         clearCheckListBox()
 
         Try
-            objReader = objMemberRoles.GetMemberRoles(currentPID, currentSemester)
+            objReader = objMemberRoles.GetMemberRoles(strCurrentPID, strCurrentSemester)
 
             Do While objReader.Read
                 If objReader.Item("RoleID") = "Admin" Then
@@ -95,38 +105,38 @@ Public Class frmMemberRoles
 
 
 
-    'Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-    '    Dim intResult As Integer
-    '    Dim blnErrors As Boolean
-    '    sslStatus.Text = ""
-    '    'add your valdation from modErrhandler here
-    '    If blnErrors Then
-    '        Exit Sub
-    '    End If
-    '    'if we get this far, all of the input data is acceptable
-    '    With objMemberRoles
-    '        .PID = txtMemberRoleID.Text
-    '        .RoleDescription = txtDesc.Text
-    '    End With
-    '    Try
-    '        Me.Cursor = Cursors.WaitCursor
-    '        intResult = objRoles.Save
-    '        If intResult = 1 Then
-    '            sslStatus.Text = "Role record saved"
-    '        End If
-    '        If intResult = -1 Then 'ID was not unique
-    '            'messagebox role ID must be unique unable to save this record, warning
-    '            sslStatus.Text = "Error"
-    '        End If
-    '    Catch ex As Exception
-    '        'messagebox unable to save role record & ex.toString
-    '    End Try
-    '    Me.Cursor = Cursors.Default
-    '    blnReloading = True
-    '    LoadRoles()
-    '    chkNew.Checked = False
-    '    grpRoles.Enabled = True 'in case it was disabled for a new record
-    'End Sub
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Dim intResult As Integer
+        Dim blnErrors As Boolean
+        sslStatus.Text = ""
+        'add your valdation from modErrhandler here
+        If blnErrors Then
+            Exit Sub
+        End If
+        'if we get this far, all of the input data is acceptable
+        With objMemberRoles
+            .PID = txtMemberRoleID.Text
+            . = txtDesc.Text
+        End With
+        Try
+            Me.Cursor = Cursors.WaitCursor
+            intResult = objRoles.Save
+            If intResult = 1 Then
+                sslStatus.Text = "Role record saved"
+            End If
+            If intResult = -1 Then 'ID was not unique
+                'messagebox role ID must be unique unable to save this record, warning
+                sslStatus.Text = "Error"
+            End If
+        Catch ex As Exception
+            'messagebox unable to save role record & ex.toString
+        End Try
+        Me.Cursor = Cursors.Default
+        blnReloading = True
+        LoadRoles()
+        chkNew.Checked = False
+        grpRoles.Enabled = True 'in case it was disabled for a new record
+    End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         txtMemberRoleID.Text = ""
@@ -141,11 +151,11 @@ Public Class frmMemberRoles
 
 
     Private Sub txtMemberRoleID_TextChanged(sender As Object, e As EventArgs) Handles txtMemberRoleID.TextChanged
-        currentPID = txtMemberRoleID.Text
+        strCurrentPID = txtMemberRoleID.Text
     End Sub
 
     Private Sub cbo_Semester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Semester.SelectedIndexChanged
-        currentSemester = cbo_Semester.GetItemText(cbo_Semester.SelectedItem)
+        strCurrentSemester = cbo_Semester.GetItemText(cbo_Semester.SelectedItem)
     End Sub
 
     Private Sub chkNew_CheckedChanged(sender As Object, e As EventArgs) Handles chkNew.CheckedChanged
