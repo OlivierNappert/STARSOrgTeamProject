@@ -32,35 +32,39 @@ Partial Class frmAdminResetPass
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(119, 185)
+        Me.btnCancel.Location = New System.Drawing.Point(159, 228)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancel.Size = New System.Drawing.Size(100, 28)
         Me.btnCancel.TabIndex = 25
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'btnResetPassword
         '
-        Me.btnResetPassword.Location = New System.Drawing.Point(13, 185)
+        Me.btnResetPassword.Location = New System.Drawing.Point(17, 228)
+        Me.btnResetPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnResetPassword.Name = "btnResetPassword"
-        Me.btnResetPassword.Size = New System.Drawing.Size(100, 23)
+        Me.btnResetPassword.Size = New System.Drawing.Size(133, 28)
         Me.btnResetPassword.TabIndex = 24
         Me.btnResetPassword.Text = "Reset Password"
         Me.btnResetPassword.UseVisualStyleBackColor = True
         '
         'tbxUser
         '
-        Me.tbxUser.Location = New System.Drawing.Point(13, 149)
+        Me.tbxUser.Location = New System.Drawing.Point(17, 183)
+        Me.tbxUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tbxUser.Name = "tbxUser"
-        Me.tbxUser.Size = New System.Drawing.Size(181, 20)
+        Me.tbxUser.Size = New System.Drawing.Size(240, 22)
         Me.tbxUser.TabIndex = 22
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(10, 133)
+        Me.Label1.Location = New System.Drawing.Point(13, 164)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(62, 13)
+        Me.Label1.Size = New System.Drawing.Size(80, 17)
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Member ID:"
         '
@@ -68,23 +72,25 @@ Partial Class frmAdminResetPass
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Image = Global.STARSOrg.My.Resources.Resources.STARS_National_LOGO
-        Me.PictureBox1.Location = New System.Drawing.Point(41, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(55, 15)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(129, 109)
+        Me.PictureBox1.Size = New System.Drawing.Size(171, 134)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 26
         Me.PictureBox1.TabStop = False
         '
         'frmAdminResetPass
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(210, 220)
+        Me.ClientSize = New System.Drawing.Size(280, 271)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnResetPassword)
         Me.Controls.Add(Me.tbxUser)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmAdminResetPass"
         Me.Text = "Reset Password"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
