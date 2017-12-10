@@ -335,17 +335,19 @@ Partial Class frmEventManager
         '
         'dtpEventEndDate
         '
+        Me.dtpEventEndDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpEventEndDate.Location = New System.Drawing.Point(108, 194)
         Me.dtpEventEndDate.Name = "dtpEventEndDate"
-        Me.dtpEventEndDate.Size = New System.Drawing.Size(200, 20)
+        Me.dtpEventEndDate.Size = New System.Drawing.Size(148, 20)
         Me.dtpEventEndDate.TabIndex = 29
         Me.dtpEventEndDate.Value = New Date(2017, 12, 10, 0, 0, 0, 0)
         '
         'dtpEventStartDate
         '
+        Me.dtpEventStartDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpEventStartDate.Location = New System.Drawing.Point(108, 161)
         Me.dtpEventStartDate.Name = "dtpEventStartDate"
-        Me.dtpEventStartDate.Size = New System.Drawing.Size(200, 20)
+        Me.dtpEventStartDate.Size = New System.Drawing.Size(148, 20)
         Me.dtpEventStartDate.TabIndex = 28
         '
         'txtLocation
