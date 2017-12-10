@@ -62,13 +62,13 @@ Public Class frmEventManager
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        txtEndDate.Clear()
-        txtEventID.Clear()
+
+
         txtEventDescription.Clear()
         txtEventTypeID.Clear()
         txtLocation.Clear()
         txtSemesterID.Clear()
-        txtStartDate.Clear()
+
 
         Me.Hide()
 
@@ -80,12 +80,12 @@ Public Class frmEventManager
         sslStatus.Text = ""
         errP.Clear()
 
-        If Not modErrHandler.ValidateTextBoxLength(txtEventID, errP) Then
+        If Not modErrHandler.ValidateTextBoxLength(txtEventTypeID, errP) Then
             blnErrors = True
-        ElseIf txtEventID.TextLength <> 4 Then
-            errP.SetError(txtEventID, "Error, this field must be exactly 4 digits long.")
-        ElseIf Not IsNumeric(txtEventID.Text) Then
-            errP.SetError(txtEventID, "Error, the value you inputed is not numeric.")
+            'ElseIf txtEventID.TextLength <> 4 Then
+            '    errP.SetError(txtEventID, "Error, this field must be exactly 4 digits long.")
+            'ElseIf Not IsNumeric(txtEventID.Text) Then
+            '    errP.SetError(txtEventID, "Error, the value you inputed is not numeric.")
         ElseIf txtEventTypeID.TextLength <> 15 Then
             errP.SetError(txtEventTypeID, "Error, this field must be exactly 15 digits long.")
         ElseIf Not IsNumeric(txtEventTypeID.Text) Then
@@ -112,31 +112,31 @@ Public Class frmEventManager
 
         'if we get this far, all of the input data is acceptable
         With objEvents.CurrentObject
-            .EventID = txtEventID.Text
+            '.EventID = txtEventID.Text
             .EventDescription = txtEventDescription.Text
             .EventTypeID = txtEventTypeID.Text
             .SemesterID = txtSemesterID.Text
-            .StartDate = txtStartDate.Text
-            .EndDate = txtEndDate.Text
+            .StartDate = dtpEventStartDate.Text
+            .EndDate = dtpEventEndDate.Text
             .Location = txtLocation.Text
 
 
         End With
 
-        'Try
-        '    Me.Cursor = Cursors.WaitCursor
-        '    intResult = objEvents.Save()
-        '    If intResult = 1 Then
-        '        sslStatus.Text = "Member record saved"
-        '    End If
-        '    If intResult = -1 Then 'Member ID was not unique
-        '        'messagebox role ID must be unique unable to save this record, warning
-        '        MessageBox.Show("Error Event ID already exists in the database, must be a unique identifier", "Warning")
-        '        sslStatus.Text = "Error"
-        '    End If
-        'Catch ex As Exception
-        '    MessageBox.Show("Error unable to save member in frmEventManager:btnAdd_Click" & ex.ToString(), "Error")
-        'End Try
+        Try
+            Me.Cursor = Cursors.WaitCursor
+            intResult = objEvents.Save()
+            If intResult = 1 Then
+                sslStatus.Text = "Member record saved"
+            End If
+            If intResult = -1 Then 'Member ID was not unique
+                'MessageBox Event ID must be unique unable to save this record, warning
+                MessageBox.Show("Error Event ID already exists in the database, must be a unique identifier", "Warning")
+                sslStatus.Text = "Error"
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error unable to save member in frmEventManager:btnAdd_Click" & ex.ToString(), "Error")
+        End Try
         Me.Cursor = Cursors.Default
         LoadData()
         grpEdit.Enabled = True
