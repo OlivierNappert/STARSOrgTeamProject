@@ -81,6 +81,10 @@
 
     Private Sub tsbRole_Click(sender As Object, e As EventArgs) Handles tsbRole.Click
         RoleInfo.ShowDialog()
+        Me.Hide()
+        RoleInfo.ShowDialog()
+        Me.Show()
+        PerformNextAction()
     End Sub
 
     Private Sub tsbEvents_Click(sender As Object, e As EventArgs) Handles tsbEvents.Click
