@@ -50,12 +50,11 @@ Partial Class frmEventManager
         Me.dgrEvent = New System.Windows.Forms.DataGridView()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.grpEdit = New System.Windows.Forms.GroupBox()
+        Me.dtpEventEndDate = New System.Windows.Forms.DateTimePicker()
+        Me.dtpEventStartDate = New System.Windows.Forms.DateTimePicker()
         Me.txtLocation = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtEndDate = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtEventID = New System.Windows.Forms.TextBox()
-        Me.txtStartDate = New System.Windows.Forms.TextBox()
         Me.txtSemesterID = New System.Windows.Forms.TextBox()
         Me.txtEventDescription = New System.Windows.Forms.TextBox()
         Me.txtEventTypeID = New System.Windows.Forms.TextBox()
@@ -63,7 +62,6 @@ Partial Class frmEventManager
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.errP = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.sslStatus = New System.Windows.Forms.ToolStripStatusLabel()
@@ -315,12 +313,11 @@ Partial Class frmEventManager
         '
         'grpEdit
         '
+        Me.grpEdit.Controls.Add(Me.dtpEventEndDate)
+        Me.grpEdit.Controls.Add(Me.dtpEventStartDate)
         Me.grpEdit.Controls.Add(Me.txtLocation)
         Me.grpEdit.Controls.Add(Me.Label2)
-        Me.grpEdit.Controls.Add(Me.txtEndDate)
         Me.grpEdit.Controls.Add(Me.Label1)
-        Me.grpEdit.Controls.Add(Me.txtEventID)
-        Me.grpEdit.Controls.Add(Me.txtStartDate)
         Me.grpEdit.Controls.Add(Me.txtSemesterID)
         Me.grpEdit.Controls.Add(Me.btnAdd)
         Me.grpEdit.Controls.Add(Me.txtEventDescription)
@@ -329,13 +326,27 @@ Partial Class frmEventManager
         Me.grpEdit.Controls.Add(Me.Label6)
         Me.grpEdit.Controls.Add(Me.Label5)
         Me.grpEdit.Controls.Add(Me.Label4)
-        Me.grpEdit.Controls.Add(Me.Label3)
         Me.grpEdit.Location = New System.Drawing.Point(726, 64)
         Me.grpEdit.Name = "grpEdit"
         Me.grpEdit.Size = New System.Drawing.Size(316, 339)
         Me.grpEdit.TabIndex = 10
         Me.grpEdit.TabStop = False
         Me.grpEdit.Text = "Edit Events"
+        '
+        'dtpEventEndDate
+        '
+        Me.dtpEventEndDate.Location = New System.Drawing.Point(108, 194)
+        Me.dtpEventEndDate.Name = "dtpEventEndDate"
+        Me.dtpEventEndDate.Size = New System.Drawing.Size(200, 20)
+        Me.dtpEventEndDate.TabIndex = 29
+        Me.dtpEventEndDate.Value = New Date(2017, 12, 10, 0, 0, 0, 0)
+        '
+        'dtpEventStartDate
+        '
+        Me.dtpEventStartDate.Location = New System.Drawing.Point(108, 161)
+        Me.dtpEventStartDate.Name = "dtpEventStartDate"
+        Me.dtpEventStartDate.Size = New System.Drawing.Size(200, 20)
+        Me.dtpEventStartDate.TabIndex = 28
         '
         'txtLocation
         '
@@ -355,14 +366,6 @@ Partial Class frmEventManager
         Me.Label2.TabIndex = 26
         Me.Label2.Text = "Location:"
         '
-        'txtEndDate
-        '
-        Me.txtEndDate.Location = New System.Drawing.Point(108, 191)
-        Me.txtEndDate.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtEndDate.Name = "txtEndDate"
-        Me.txtEndDate.Size = New System.Drawing.Size(148, 20)
-        Me.txtEndDate.TabIndex = 25
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -372,22 +375,6 @@ Partial Class frmEventManager
         Me.Label1.Size = New System.Drawing.Size(55, 13)
         Me.Label1.TabIndex = 24
         Me.Label1.Text = "End Date:"
-        '
-        'txtEventID
-        '
-        Me.txtEventID.Location = New System.Drawing.Point(108, 18)
-        Me.txtEventID.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtEventID.Name = "txtEventID"
-        Me.txtEventID.Size = New System.Drawing.Size(148, 20)
-        Me.txtEventID.TabIndex = 23
-        '
-        'txtStartDate
-        '
-        Me.txtStartDate.Location = New System.Drawing.Point(108, 158)
-        Me.txtStartDate.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtStartDate.Name = "txtStartDate"
-        Me.txtStartDate.Size = New System.Drawing.Size(148, 20)
-        Me.txtStartDate.TabIndex = 21
         '
         'txtSemesterID
         '
@@ -452,16 +439,6 @@ Partial Class frmEventManager
         Me.Label4.Size = New System.Drawing.Size(94, 13)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Event Description:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(5, 21)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 13)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Event ID:"
         '
         'errP
         '
@@ -536,8 +513,6 @@ Partial Class frmEventManager
     Friend WithEvents btnAdd As Button
     Friend WithEvents dgrEvent As DataGridView
     Friend WithEvents grpEdit As GroupBox
-    Friend WithEvents txtEventID As TextBox
-    Friend WithEvents txtStartDate As TextBox
     Friend WithEvents txtSemesterID As TextBox
     Friend WithEvents txtEventDescription As TextBox
     Friend WithEvents txtEventTypeID As TextBox
@@ -545,13 +520,13 @@ Partial Class frmEventManager
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents txtLocation As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents txtEndDate As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnEdit As Button
     Friend WithEvents errP As ErrorProvider
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents sslStatus As ToolStripStatusLabel
+    Friend WithEvents dtpEventStartDate As DateTimePicker
+    Friend WithEvents dtpEventEndDate As DateTimePicker
 End Class

@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Module ModDB
     'Connection string for LocalDb
-    Public Const gstConn As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Oliver\Desktop\FIU\Windows\STARSOrgTeamProject\STARSDB.MDF;Integrated Security=True"
+    Public Const gstConn As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\SHADE\SOURCE\REPOS\STARSORG\STARSDB.MDF"
     'Database objects
     Public objSQLConn As SqlConnection 'connection object
     Public objSQLCommand As SqlCommand ' command object

@@ -9,9 +9,9 @@
 	Private databaseAuditData As cAudit
 	Public strSecRole As String
 	Private LoginChangePass As frmLoginChangePass
-	Private StarsOrgMainMenu As frmMain
 
-	Private Sub LoadLoginInfo()
+
+    Private Sub LoadLoginInfo()
 		strUsername = tbxUser.Text
 		strFrmPassword = tbxPass.Text
 	End Sub
@@ -39,8 +39,8 @@
 			databaseAuditData.PID = databaseUserData.PID
 			databaseAuditData.SUCCESS = "TRUE"
 			databaseAuditData.Save()
-			StarsOrgMainMenu.Show()
-			Me.Close()
+
+            Me.Close()
 		Else
 			databaseAuditTable.CreateNewAudit()
 			databaseAuditData = databaseAuditTable.CurrentObject
@@ -60,7 +60,7 @@
 	End Sub
 
 	Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles Me.Load
-		LoginChangePass = New frmLoginChangePass
-		StarsOrgMainMenu = New frmMain
-	End Sub
+        LoginChangePass = New frmLoginChangePass
+
+    End Sub
 End Class
