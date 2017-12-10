@@ -99,7 +99,7 @@ Partial Class frmMembers
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.ToolStrip1.Size = New System.Drawing.Size(1031, 63)
+        Me.ToolStrip1.Size = New System.Drawing.Size(916, 50)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -178,7 +178,7 @@ Partial Class frmMembers
         Me.tsbRSVP.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.tsbRSVP.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbRSVP.Name = "tsbRSVP"
-        Me.tsbRSVP.Size = New System.Drawing.Size(23, 60)
+        Me.tsbRSVP.Size = New System.Drawing.Size(23, 47)
         Me.tsbRSVP.Text = "RSVP"
         '
         'ToolStripSeparator1
@@ -268,40 +268,40 @@ Partial Class frmMembers
         Me.grpSearch.Controls.Add(Me.btnSearch)
         Me.grpSearch.Controls.Add(Me.txtVal)
         Me.grpSearch.Controls.Add(Me.Label2)
-        Me.grpSearch.Location = New System.Drawing.Point(13, 68)
-        Me.grpSearch.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.grpSearch.Location = New System.Drawing.Point(12, 54)
+        Me.grpSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.grpSearch.Name = "grpSearch"
-        Me.grpSearch.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.grpSearch.Size = New System.Drawing.Size(629, 90)
+        Me.grpSearch.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grpSearch.Size = New System.Drawing.Size(559, 72)
         Me.grpSearch.TabIndex = 2
         Me.grpSearch.TabStop = False
         Me.grpSearch.Text = "Search"
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(469, 41)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnSearch.Location = New System.Drawing.Point(417, 33)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(152, 35)
+        Me.btnSearch.Size = New System.Drawing.Size(135, 28)
         Me.btnSearch.TabIndex = 4
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = True
         '
         'txtVal
         '
-        Me.txtVal.Location = New System.Drawing.Point(112, 45)
-        Me.txtVal.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtVal.Location = New System.Drawing.Point(100, 36)
+        Me.txtVal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtVal.Name = "txtVal"
-        Me.txtVal.Size = New System.Drawing.Size(349, 26)
+        Me.txtVal.Size = New System.Drawing.Size(311, 22)
         Me.txtVal.TabIndex = 3
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(16, 48)
+        Me.Label2.Location = New System.Drawing.Point(14, 38)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 20)
+        Me.Label2.Size = New System.Drawing.Size(78, 17)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Last name:"
         '
@@ -324,11 +324,11 @@ Partial Class frmMembers
         Me.grpEdit.Controls.Add(Me.Label4)
         Me.grpEdit.Controls.Add(Me.Label3)
         Me.grpEdit.Controls.Add(Me.btnSave)
-        Me.grpEdit.Location = New System.Drawing.Point(650, 68)
-        Me.grpEdit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.grpEdit.Location = New System.Drawing.Point(578, 54)
+        Me.grpEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.grpEdit.Name = "grpEdit"
-        Me.grpEdit.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.grpEdit.Size = New System.Drawing.Size(368, 657)
+        Me.grpEdit.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grpEdit.Size = New System.Drawing.Size(327, 526)
         Me.grpEdit.TabIndex = 3
         Me.grpEdit.TabStop = False
         Me.grpEdit.Text = "Edit Members"
@@ -337,80 +337,88 @@ Partial Class frmMembers
         '
         Me.ptbPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ptbPhoto.InitialImage = Nothing
-        Me.ptbPhoto.Location = New System.Drawing.Point(209, 361)
+        Me.ptbPhoto.Location = New System.Drawing.Point(186, 289)
+        Me.ptbPhoto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ptbPhoto.Name = "ptbPhoto"
-        Me.ptbPhoto.Size = New System.Drawing.Size(149, 170)
+        Me.ptbPhoto.Size = New System.Drawing.Size(133, 136)
         Me.ptbPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.ptbPhoto.TabIndex = 25
         Me.ptbPhoto.TabStop = False
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(209, 604)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnCancel.Location = New System.Drawing.Point(186, 483)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(152, 43)
+        Me.btnCancel.Size = New System.Drawing.Size(135, 34)
         Me.btnCancel.TabIndex = 24
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'txtMemberID
         '
-        Me.txtMemberID.Location = New System.Drawing.Point(141, 34)
+        Me.txtMemberID.Location = New System.Drawing.Point(125, 27)
+        Me.txtMemberID.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtMemberID.Name = "txtMemberID"
-        Me.txtMemberID.Size = New System.Drawing.Size(220, 26)
+        Me.txtMemberID.Size = New System.Drawing.Size(196, 22)
         Me.txtMemberID.TabIndex = 23
         '
         'mskPhone
         '
-        Me.mskPhone.Location = New System.Drawing.Point(141, 304)
+        Me.mskPhone.Location = New System.Drawing.Point(125, 243)
+        Me.mskPhone.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.mskPhone.Mask = "(000)000-0000"
         Me.mskPhone.Name = "mskPhone"
-        Me.mskPhone.Size = New System.Drawing.Size(220, 26)
+        Me.mskPhone.Size = New System.Drawing.Size(196, 22)
         Me.mskPhone.TabIndex = 22
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(141, 250)
+        Me.txtEmail.Location = New System.Drawing.Point(125, 200)
+        Me.txtEmail.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(220, 26)
+        Me.txtEmail.Size = New System.Drawing.Size(196, 22)
         Me.txtEmail.TabIndex = 21
         '
         'txtLastName
         '
-        Me.txtLastName.Location = New System.Drawing.Point(141, 196)
+        Me.txtLastName.Location = New System.Drawing.Point(125, 157)
+        Me.txtLastName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(220, 26)
+        Me.txtLastName.Size = New System.Drawing.Size(196, 22)
         Me.txtLastName.TabIndex = 20
         '
         'txtFirstName
         '
-        Me.txtFirstName.Location = New System.Drawing.Point(141, 88)
+        Me.txtFirstName.Location = New System.Drawing.Point(125, 70)
+        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(220, 26)
+        Me.txtFirstName.Size = New System.Drawing.Size(196, 22)
         Me.txtFirstName.TabIndex = 18
         '
         'txtMiddleName
         '
-        Me.txtMiddleName.Location = New System.Drawing.Point(141, 142)
+        Me.txtMiddleName.Location = New System.Drawing.Point(125, 114)
+        Me.txtMiddleName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtMiddleName.Name = "txtMiddleName"
-        Me.txtMiddleName.Size = New System.Drawing.Size(220, 26)
+        Me.txtMiddleName.Size = New System.Drawing.Size(196, 22)
         Me.txtMiddleName.TabIndex = 17
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(12, 361)
+        Me.Label9.Location = New System.Drawing.Point(11, 289)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(55, 20)
+        Me.Label9.Size = New System.Drawing.Size(49, 17)
         Me.Label9.TabIndex = 14
         Me.Label9.Text = "Photo:"
         '
         'btnOpen
         '
-        Me.btnOpen.Location = New System.Drawing.Point(16, 498)
+        Me.btnOpen.Location = New System.Drawing.Point(14, 398)
+        Me.btnOpen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnOpen.Name = "btnOpen"
-        Me.btnOpen.Size = New System.Drawing.Size(140, 33)
+        Me.btnOpen.Size = New System.Drawing.Size(124, 26)
         Me.btnOpen.TabIndex = 7
         Me.btnOpen.Text = "Open..."
         Me.btnOpen.UseVisualStyleBackColor = True
@@ -418,63 +426,63 @@ Partial Class frmMembers
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(8, 307)
+        Me.Label8.Location = New System.Drawing.Point(7, 246)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(59, 20)
+        Me.Label8.Size = New System.Drawing.Size(53, 17)
         Me.Label8.TabIndex = 13
         Me.Label8.Text = "Phone:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(8, 253)
+        Me.Label7.Location = New System.Drawing.Point(7, 202)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(52, 20)
+        Me.Label7.Size = New System.Drawing.Size(46, 17)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Email:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(8, 199)
+        Me.Label6.Location = New System.Drawing.Point(7, 159)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(90, 20)
+        Me.Label6.Size = New System.Drawing.Size(80, 17)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Last Name:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(8, 145)
+        Me.Label5.Location = New System.Drawing.Point(7, 116)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(105, 20)
+        Me.Label5.Size = New System.Drawing.Size(94, 17)
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Middle Name:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(8, 91)
+        Me.Label4.Location = New System.Drawing.Point(7, 73)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(90, 20)
+        Me.Label4.Size = New System.Drawing.Size(80, 17)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "First Name:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(8, 37)
+        Me.Label3.Location = New System.Drawing.Point(7, 30)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(92, 20)
+        Me.Label3.Size = New System.Drawing.Size(80, 17)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Member ID:"
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(13, 604)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnSave.Location = New System.Drawing.Point(12, 483)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(152, 43)
+        Me.btnSave.Size = New System.Drawing.Size(135, 34)
         Me.btnSave.TabIndex = 5
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
@@ -482,9 +490,11 @@ Partial Class frmMembers
         'grpMemberList
         '
         Me.grpMemberList.Controls.Add(Me.dgrMembers)
-        Me.grpMemberList.Location = New System.Drawing.Point(13, 245)
+        Me.grpMemberList.Location = New System.Drawing.Point(12, 196)
+        Me.grpMemberList.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.grpMemberList.Name = "grpMemberList"
-        Me.grpMemberList.Size = New System.Drawing.Size(629, 480)
+        Me.grpMemberList.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.grpMemberList.Size = New System.Drawing.Size(559, 384)
         Me.grpMemberList.TabIndex = 4
         Me.grpMemberList.TabStop = False
         Me.grpMemberList.Text = "Member list"
@@ -495,12 +505,13 @@ Partial Class frmMembers
         Me.dgrMembers.AllowUserToDeleteRows = False
         Me.dgrMembers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgrMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgrMembers.Location = New System.Drawing.Point(7, 26)
+        Me.dgrMembers.Location = New System.Drawing.Point(6, 21)
+        Me.dgrMembers.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgrMembers.Name = "dgrMembers"
         Me.dgrMembers.ReadOnly = True
         Me.dgrMembers.RowTemplate.Height = 28
         Me.dgrMembers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgrMembers.Size = New System.Drawing.Size(614, 444)
+        Me.dgrMembers.Size = New System.Drawing.Size(546, 355)
         Me.dgrMembers.TabIndex = 0
         '
         'errP
@@ -509,10 +520,10 @@ Partial Class frmMembers
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(859, 734)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnClose.Location = New System.Drawing.Point(764, 587)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(152, 43)
+        Me.btnClose.Size = New System.Drawing.Size(135, 34)
         Me.btnClose.TabIndex = 6
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
@@ -525,11 +536,11 @@ Partial Class frmMembers
         '
         Me.grpSelect.Controls.Add(Me.cboMembers)
         Me.grpSelect.Controls.Add(Me.Label1)
-        Me.grpSelect.Location = New System.Drawing.Point(13, 168)
-        Me.grpSelect.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.grpSelect.Location = New System.Drawing.Point(12, 134)
+        Me.grpSelect.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.grpSelect.Name = "grpSelect"
-        Me.grpSelect.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.grpSelect.Size = New System.Drawing.Size(440, 64)
+        Me.grpSelect.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grpSelect.Size = New System.Drawing.Size(391, 51)
         Me.grpSelect.TabIndex = 7
         Me.grpSelect.TabStop = False
         Me.grpSelect.Text = "Select member by ID"
@@ -538,30 +549,31 @@ Partial Class frmMembers
         '
         Me.cboMembers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboMembers.FormattingEnabled = True
-        Me.cboMembers.Location = New System.Drawing.Point(225, 24)
+        Me.cboMembers.Location = New System.Drawing.Point(200, 19)
+        Me.cboMembers.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cboMembers.Name = "cboMembers"
-        Me.cboMembers.Size = New System.Drawing.Size(205, 28)
+        Me.cboMembers.Size = New System.Drawing.Size(183, 24)
         Me.cboMembers.Sorted = True
         Me.cboMembers.TabIndex = 7
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(16, 28)
+        Me.Label1.Location = New System.Drawing.Point(14, 22)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(202, 20)
+        Me.Label1.Size = New System.Drawing.Size(179, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Choose member to update:"
         '
         'grpNew
         '
         Me.grpNew.Controls.Add(Me.chkNew)
-        Me.grpNew.Location = New System.Drawing.Point(461, 168)
-        Me.grpNew.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.grpNew.Location = New System.Drawing.Point(410, 134)
+        Me.grpNew.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.grpNew.Name = "grpNew"
-        Me.grpNew.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.grpNew.Size = New System.Drawing.Size(181, 64)
+        Me.grpNew.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grpNew.Size = New System.Drawing.Size(161, 51)
         Me.grpNew.TabIndex = 8
         Me.grpNew.TabStop = False
         Me.grpNew.Text = "Add member"
@@ -569,9 +581,10 @@ Partial Class frmMembers
         'chkNew
         '
         Me.chkNew.AutoSize = True
-        Me.chkNew.Location = New System.Drawing.Point(7, 27)
+        Me.chkNew.Location = New System.Drawing.Point(6, 22)
+        Me.chkNew.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.chkNew.Name = "chkNew"
-        Me.chkNew.Size = New System.Drawing.Size(159, 24)
+        Me.chkNew.Size = New System.Drawing.Size(139, 21)
         Me.chkNew.TabIndex = 1
         Me.chkNew.Text = "Add new member"
         Me.chkNew.UseVisualStyleBackColor = True
@@ -580,44 +593,43 @@ Partial Class frmMembers
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sslStatus})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 782)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 625)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 16, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(1031, 30)
+        Me.StatusStrip1.Size = New System.Drawing.Size(916, 25)
         Me.StatusStrip1.TabIndex = 17
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'sslStatus
         '
         Me.sslStatus.Name = "sslStatus"
-        Me.sslStatus.Size = New System.Drawing.Size(180, 25)
+        Me.sslStatus.Size = New System.Drawing.Size(153, 20)
         Me.sslStatus.Text = "ToolStripStatusLabel1"
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(662, 735)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnClear.Location = New System.Drawing.Point(588, 588)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(152, 43)
+        Me.btnClear.Size = New System.Drawing.Size(135, 34)
         Me.btnClear.TabIndex = 6
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
         'btnReport
         '
-        Me.btnReport.Location = New System.Drawing.Point(13, 735)
-        Me.btnReport.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnReport.Location = New System.Drawing.Point(12, 588)
+        Me.btnReport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(152, 43)
+        Me.btnReport.Size = New System.Drawing.Size(135, 34)
         Me.btnReport.TabIndex = 19
         Me.btnReport.Text = "Make report"
         Me.btnReport.UseVisualStyleBackColor = True
         '
         'frmMembers
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1031, 812)
+        Me.ClientSize = New System.Drawing.Size(916, 650)
         Me.Controls.Add(Me.btnReport)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.StatusStrip1)
@@ -628,6 +640,7 @@ Partial Class frmMembers
         Me.Controls.Add(Me.grpEdit)
         Me.Controls.Add(Me.grpSearch)
         Me.Controls.Add(Me.ToolStrip1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "frmMembers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Membership Management"

@@ -60,12 +60,28 @@ Partial Class frmMemberRoles
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.sslStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.errP = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataSetMembers = New STARSOrg.dataSetMembers()
+        Me.MEMBERBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MEMBERTableAdapter = New STARSOrg.dataSetMembersTableAdapters.MEMBERTableAdapter()
+        Me.PIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MIDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PhoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PhotoPathDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip1.SuspendLayout()
         Me.grpNew.SuspendLayout()
         Me.grpRoles.SuspendLayout()
         Me.grpEdit.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.errP, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetMembers, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MEMBERBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -307,6 +323,8 @@ Partial Class frmMemberRoles
         '
         'grpRoles
         '
+        Me.grpRoles.Controls.Add(Me.DataGridView1)
+        Me.grpRoles.Controls.Add(Me.Label1)
         Me.grpRoles.Controls.Add(Me.clb_MemberRoles)
         Me.grpRoles.Location = New System.Drawing.Point(12, 182)
         Me.grpRoles.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -323,11 +341,12 @@ Partial Class frmMemberRoles
         Me.clb_MemberRoles.Items.AddRange(New Object() {"Admin", "Officer", "Tutor", "Member"})
         Me.clb_MemberRoles.Location = New System.Drawing.Point(6, 25)
         Me.clb_MemberRoles.Name = "clb_MemberRoles"
-        Me.clb_MemberRoles.Size = New System.Drawing.Size(250, 293)
+        Me.clb_MemberRoles.Size = New System.Drawing.Size(253, 72)
         Me.clb_MemberRoles.TabIndex = 0
         '
         'grpEdit
         '
+        Me.grpEdit.Controls.Add(Me.ComboBox1)
         Me.grpEdit.Controls.Add(Me.cbo_Semester)
         Me.grpEdit.Controls.Add(Me.btnSave)
         Me.grpEdit.Controls.Add(Me.btnCancel)
@@ -349,7 +368,7 @@ Partial Class frmMemberRoles
         Me.cbo_Semester.Items.AddRange(New Object() {"Fall", "Spri"})
         Me.cbo_Semester.Location = New System.Drawing.Point(109, 60)
         Me.cbo_Semester.Name = "cbo_Semester"
-        Me.cbo_Semester.Size = New System.Drawing.Size(164, 24)
+        Me.cbo_Semester.Size = New System.Drawing.Size(121, 24)
         Me.cbo_Semester.TabIndex = 19
         '
         'btnSave
@@ -416,6 +435,102 @@ Partial Class frmMemberRoles
         '
         Me.errP.ContainerControl = Me
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"17", "18"})
+        Me.ComboBox1.Location = New System.Drawing.Point(233, 60)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(40, 24)
+        Me.ComboBox1.TabIndex = 20
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 116)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(66, 17)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Members"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PIDDataGridViewTextBoxColumn, Me.FNameDataGridViewTextBoxColumn, Me.LNameDataGridViewTextBoxColumn, Me.MIDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.PhoneDataGridViewTextBoxColumn, Me.PhotoPathDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.MEMBERBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(9, 142)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(249, 179)
+        Me.DataGridView1.TabIndex = 3
+        '
+        'DataSetMembers
+        '
+        Me.DataSetMembers.DataSetName = "dataSetMembers"
+        Me.DataSetMembers.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'MEMBERBindingSource
+        '
+        Me.MEMBERBindingSource.DataMember = "MEMBER"
+        Me.MEMBERBindingSource.DataSource = Me.DataSetMembers
+        '
+        'MEMBERTableAdapter
+        '
+        Me.MEMBERTableAdapter.ClearBeforeFill = True
+        '
+        'PIDDataGridViewTextBoxColumn
+        '
+        Me.PIDDataGridViewTextBoxColumn.DataPropertyName = "PID"
+        Me.PIDDataGridViewTextBoxColumn.HeaderText = "PID"
+        Me.PIDDataGridViewTextBoxColumn.Name = "PIDDataGridViewTextBoxColumn"
+        Me.PIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FNameDataGridViewTextBoxColumn
+        '
+        Me.FNameDataGridViewTextBoxColumn.DataPropertyName = "FName"
+        Me.FNameDataGridViewTextBoxColumn.HeaderText = "FName"
+        Me.FNameDataGridViewTextBoxColumn.Name = "FNameDataGridViewTextBoxColumn"
+        Me.FNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'LNameDataGridViewTextBoxColumn
+        '
+        Me.LNameDataGridViewTextBoxColumn.DataPropertyName = "LName"
+        Me.LNameDataGridViewTextBoxColumn.HeaderText = "LName"
+        Me.LNameDataGridViewTextBoxColumn.Name = "LNameDataGridViewTextBoxColumn"
+        Me.LNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'MIDataGridViewTextBoxColumn
+        '
+        Me.MIDataGridViewTextBoxColumn.DataPropertyName = "MI"
+        Me.MIDataGridViewTextBoxColumn.HeaderText = "MI"
+        Me.MIDataGridViewTextBoxColumn.Name = "MIDataGridViewTextBoxColumn"
+        Me.MIDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EmailDataGridViewTextBoxColumn
+        '
+        Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "Email"
+        Me.EmailDataGridViewTextBoxColumn.HeaderText = "Email"
+        Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
+        Me.EmailDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PhoneDataGridViewTextBoxColumn
+        '
+        Me.PhoneDataGridViewTextBoxColumn.DataPropertyName = "Phone"
+        Me.PhoneDataGridViewTextBoxColumn.HeaderText = "Phone"
+        Me.PhoneDataGridViewTextBoxColumn.Name = "PhoneDataGridViewTextBoxColumn"
+        Me.PhoneDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PhotoPathDataGridViewTextBoxColumn
+        '
+        Me.PhotoPathDataGridViewTextBoxColumn.DataPropertyName = "PhotoPath"
+        Me.PhotoPathDataGridViewTextBoxColumn.HeaderText = "PhotoPath"
+        Me.PhotoPathDataGridViewTextBoxColumn.Name = "PhotoPathDataGridViewTextBoxColumn"
+        Me.PhotoPathDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'frmMemberRoles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -438,11 +553,15 @@ Partial Class frmMemberRoles
         Me.grpNew.ResumeLayout(False)
         Me.grpNew.PerformLayout()
         Me.grpRoles.ResumeLayout(False)
+        Me.grpRoles.PerformLayout()
         Me.grpEdit.ResumeLayout(False)
         Me.grpEdit.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.errP, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetMembers, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MEMBERBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -485,4 +604,17 @@ Partial Class frmMemberRoles
     Friend WithEvents errP As ErrorProvider
     Friend WithEvents cbo_Semester As ComboBox
     Friend WithEvents clb_MemberRoles As CheckedListBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataSetMembers As dataSetMembers
+    Friend WithEvents MEMBERBindingSource As BindingSource
+    Friend WithEvents MEMBERTableAdapter As dataSetMembersTableAdapters.MEMBERTableAdapter
+    Friend WithEvents PIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents LNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MIDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PhoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PhotoPathDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
