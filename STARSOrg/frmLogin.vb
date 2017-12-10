@@ -9,6 +9,7 @@
 	Private databaseAuditData As cAudit
 	Public strSecRole As String
 	Private LoginChangePass As frmLoginChangePass
+	Private StarsOrgMainMenu As frmMain
 
 	Private Sub LoadLoginInfo()
 		strUsername = tbxUser.Text
@@ -38,6 +39,8 @@
 			databaseAuditData.PID = databaseUserData.PID
 			databaseAuditData.SUCCESS = "TRUE"
 			databaseAuditData.Save()
+			StarsOrgMainMenu = New frmMain
+			StarsOrgMainMenu.ShowDialog()
 		Else
 			databaseAuditTable.CreateNewAudit()
 			databaseAuditData = databaseAuditTable.CurrentObject
