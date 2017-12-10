@@ -3,19 +3,15 @@
     Private MembersInfo As frmMembers
     Private EventInfo As frmEventManager
 	Private EventRSVP As frmEventRSVP
-	Private gstrConn As String = ""
-    Public strSecRole As String
-
+    Private gstrConn As String = ""
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'instantiate a form object for each form in the application
-
-        RoleInfo = New frmMemberRoles
-        MembersInfo = New frmMembers
+		'instantiate a form object for each form in the application
+		RoleInfo = New frmMemberRoles
+		MembersInfo = New frmMembers
 		EventInfo = New frmEventManager
-        EventRSVP = New frmEventRSVP
-
-        Try
+		EventRSVP = New frmEventRSVP
+		Try
 			myDB.OpenDB()
 		Catch ex As Exception
 			MessageBox.Show("Unable to open database. Connection string=" & gstrConn & " Program will end", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -23,7 +19,7 @@
 			End
 		End Try
 
-        RoleInfo.Hide()
+		RoleInfo.Hide()
 		MembersInfo.Hide()
 		EventInfo.Hide()
 		EventRSVP.Hide()

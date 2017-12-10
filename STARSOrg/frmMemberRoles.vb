@@ -114,13 +114,13 @@ Public Class frmMemberRoles
             Exit Sub
         End If
         'if we get this far, all of the input data is acceptable
-        With objMemberRoles
-            '.PID = txtMemberRoleID.Text
-            '. = txtDesc.Text
+        With objMemberRoles.CurrentOject
+            .PID = txtPID.Text
+            .RoleID = txtMemberRoleID.Text
         End With
         Try
             Me.Cursor = Cursors.WaitCursor
-            intResult = objMemberRoles.Save
+            intResult = objMemberRoles.Save()
             If intResult = 1 Then
                 sslStatus.Text = "Role record saved"
             End If
