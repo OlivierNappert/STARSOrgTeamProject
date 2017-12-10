@@ -1,13 +1,13 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class cAudits
-    'Represents the SECURITY table and its associate business rules
-    Private _Audit As cAudit
+	'Represents the AUDIT table and its associate business rules
+	Private _Audit As cAudit
     'constructor
 
     Public Sub New()
-        'insantiate the cSecurity object
-        _Audit = New cAudit
+		'insantiate the cAudit object
+		_Audit = New cAudit
     End Sub
 
     Public ReadOnly Property CurrentObject() As cAudit
@@ -20,8 +20,8 @@ Public Class cAudits
         _Audit = New cAudit
     End Sub
     Public Sub CreateNewAudit()
-        'call this routine when clearing the edit portion of the screen to add a new security
-        Clear()
+		'call this routine when clearing the edit portion of the screen to add a new audit
+		Clear()
         _Audit.IsNewAudit = True
     End Sub
     Public Function Save() As Integer
@@ -49,8 +49,8 @@ Public Class cAudits
                     .SUCCESS = sqldr.Item("SUCCESS") & ""
                 End With
             Else
-                'did not get a matching role record
-            End If
+				'did not get a matching Audit record
+			End If
         End Using
         sqldr.Close()
         Return _Audit

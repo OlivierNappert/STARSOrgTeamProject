@@ -1,24 +1,34 @@
 ﻿Public Class frmMain
-    Private RoleInfo As frmRoles
+    Private RoleInfo As frmMemberRoles
     Private MembersInfo As frmMembers
     Private EventInfo As frmEventManager
-    Private EventRSVP As frmEventRSVP
+	Private EventRSVP As frmEventRSVP
+	Private gstrConn As String = ""
+	Public strSecRole As String
 
-    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'instantiate a form object for each form in the application
-        RoleInfo = New frmRoles
-        MembersInfo = New frmMembers
-        EventInfo = New frmEventManager
-        EventRSVP = New frmEventRSVP
-        RoleInfo.Hide()
-        MembersInfo.Hide()
-        EventInfo.Hide()
-        EventRSVP.Hide()
-    End Sub
+	Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+		'instantiate a form object for each form in the application
+		RoleInfo = New frmMemberRoles
+		MembersInfo = New frmMembers
+		EventInfo = New frmEventManager
+		EventRSVP = New frmEventRSVP
+		Try
+			myDB.OpenDB()
+		Catch ex As Exception
+			MessageBox.Show("Unable to open database. Connection string=" & gstrConn & " Program will end", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+			EndProgram()
+			End
+		End Try
+
+		RoleInfo.Hide()
+		MembersInfo.Hide()
+		EventInfo.Hide()
+		EventRSVP.Hide()
+	End Sub
 
 
 
-    Private Sub tsbProxy_MouseEnter(sender As Object, e As EventArgs) Handles tsbEvents.MouseEnter, tsbEvents.MouseEnter, tsbHelp.MouseEnter, tsbHome.MouseEnter, tsbLogOut.MouseEnter, tsbMember.MouseEnter, tsbRole.MouseEnter, tsbRSVP.MouseEnter, tsbSemester.MouseEnter, tsbTutor.MouseEnter
+	Private Sub tsbProxy_MouseEnter(sender As Object, e As EventArgs) Handles tsbEvents.MouseEnter, tsbEvents.MouseEnter, tsbHelp.MouseEnter, tsbHome.MouseEnter, tsbLogOut.MouseEnter, tsbMember.MouseEnter, tsbRole.MouseEnter, tsbRSVP.MouseEnter, tsbSemester.MouseEnter, tsbTutor.MouseEnter
         'we need to do this only because we are not putting our images in the image proporty, but instead we are using 
         'the backgroundImage property
         Dim tsbProxy As ToolStripButton
@@ -72,6 +82,13 @@
                 End If
             End If
         Next
+        'close database connection
+        If Not objSQLConn Is Nothing Then
+            objSQLConn.Close()
+            objSQLConn.Dispose()
+        End If
+        Me.Cursor = Cursors.Default
+        End
 
     End Sub
 
