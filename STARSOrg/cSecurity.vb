@@ -72,12 +72,14 @@ Public Class cSecurity
         'return -1 if the ID already exists (and we can't create a new record with duplicate ID)
         If IsNewSecurity Then
             Dim params As New ArrayList
-            params.Add(New SqlParameter("pID", _mstrPID))
-            Dim strRes As String = myDB.GetSingleValueFromSP("sp_CheckPIDExists", params)
-            If Not strRes = 0 Then
-                Return -1 'This record already exists
-            End If
-        End If
+			params.Add(New SqlParameter("pID", _mstrPID))
+			params.Add(New SqlParameter("userID", _mstrUserID))
+			Dim strRes As String = myDB.GetSingleValueFromSP("sp_CheckPIDExists", params)
+			Dim strRes2 As String = myDB.GetSingleValueFromSP("sp_CheckUserIDExists", params)
+			If Not strRes = 0 And strRes2 = 0 Then
+				Return -1 'This record already exists
+			End If
+		End If
         'If not a new role, or it is new and has a unique ID, then do the save (update or insert)
         Return myDB.ExecSP("sp_SaveSecurity", GetSaveParameters()) 'Result of 0 means success
     End Function

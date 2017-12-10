@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class cAudit
-    'This class represents a single record in the Security Table
-    Private _mstrukid As String 'matches exactly the name of the field in the database, and data type
+	'This class represents a single record in the Audit Table
+	Private _mstrukid As String 'matches exactly the name of the field in the database, and data type
     Private _mstrPID As String 'compare names to tables
     Private _mstrACCESSTIMESTAMP As String
     Private _mstrSUCCESS As String

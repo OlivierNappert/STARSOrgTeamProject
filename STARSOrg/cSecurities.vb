@@ -31,14 +31,21 @@ Public Class cSecurities
         Return myDB.GetDataReaderBySP("dbo.sp_getAllSecurity", Nothing)
     End Function
 
-    Public Function GetSecurityByPID(strID As String) As cSecurity
-        Dim params As New ArrayList
-        params.Add(New SqlParameter("pID", strID))
-        FillObject(myDB.GetDataReaderBySP("dbo.sp_GetSecurityByPID", params))
-        Return _Security
-    End Function
+	Public Function GetSecurityByPID(strID As String) As cSecurity
+		Dim params As New ArrayList
+		params.Add(New SqlParameter("pID", strID))
+		FillObject(myDB.GetDataReaderBySP("dbo.sp_GetSecurityByPID", params))
+		Return _Security
+	End Function
 
-    Private Function FillObject(sqldr As SqlDataReader) As cSecurity
+	Public Function GetSecurityByUserID(strID As String) As cSecurity
+		Dim params As New ArrayList
+		params.Add(New SqlParameter("userID", strID))
+		FillObject(myDB.GetDataReaderBySP("dbo.sp_GetSecurityByUserID", params))
+		Return _Security
+	End Function
+
+	Private Function FillObject(sqldr As SqlDataReader) As cSecurity
         Using sqldr
             If sqldr.Read() Then 'found the security record
                 With _Security
