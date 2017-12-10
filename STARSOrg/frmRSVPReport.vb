@@ -6,9 +6,7 @@
     End Sub
 
     Private Sub frmRSVPReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.EVENT_RSVPTableAdapter.Fill(Me.dataSetMembers.EVENT_RSVP)
+        'Me.EVENT_RSVPTableAdapter.Fill(Me.dataSetEvents.EVENT_RSVP)
         Me.rptEvents.RefreshReport()
-
-
     End Sub
 End Class
