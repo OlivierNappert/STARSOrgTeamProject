@@ -9,18 +9,10 @@ Public Class cMemberRole
 
     Public Sub New()
         _mstrPID = ""
-        _Ukid = 0
         _mstrRoleID = ""
         _mstrSemesterID = ""
     End Sub
-    Public Property Ukid As String
-        Get
-            Return _Ukid
-        End Get
-        Set(value As String)
-            _Ukid = Ukid
-        End Set
-    End Property
+
     Public Property RoleID As String
         Get
             Return _mstrRoleID

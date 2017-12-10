@@ -1,15 +1,23 @@
 ﻿Public Class frmMain
-    Private RoleInfo As frmRoles
+    Private RoleInfo As frmMemberRoles
     Private MembersInfo As frmMembers
     Private EventInfo As frmEventManager
     Private EventRSVP As frmEventRSVP
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'instantiate a form object for each form in the application
-        RoleInfo = New frmRoles
+        RoleInfo = New frmMemberRoles
         MembersInfo = New frmMembers
         EventInfo = New frmEventManager
         EventRSVP = New frmEventRSVP
+        Try
+            myDB.OpenDB()
+        Catch ex As Exception
+            MessageBox.Show("Unable to open database. Connection string=" & gstrConn & " Program will end", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            EndProgram()
+            End
+        End Try
+
         RoleInfo.Hide()
         MembersInfo.Hide()
         EventInfo.Hide()
@@ -72,6 +80,13 @@
                 End If
             End If
         Next
+        'close database connection
+        If Not objSQLConn Is Nothing Then
+            objSQLConn.Close()
+            objSQLConn.Dispose()
+        End If
+        Me.Cursor = Cursors.Default
+        End
 
     End Sub
 
