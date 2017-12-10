@@ -132,9 +132,20 @@
     <Compile Include="cRoles.vb" />
     <Compile Include="cSecurities.vb" />
     <Compile Include="cSecurity.vb" />
+    <Compile Include="DataSetEvents.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEvents.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetEvents.vb">
+      <DependentUpon>DataSetEvents.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dataSetMembers.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>dataSetMembers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataSetMembers.vb">
       <DependentUpon>dataSetMembers.xsd</DependentUpon>
     </Compile>
     <Compile Include="frmAdminChoice.designer.vb">
@@ -279,6 +290,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DataSetEvents.xsc">
+      <DependentUpon>DataSetEvents.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetEvents.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEvents.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSetEvents.xss">
+      <DependentUpon>DataSetEvents.xsd</DependentUpon>
+    </None>
     <None Include="dataSetMembers.xsc">
       <DependentUpon>dataSetMembers.xsd</DependentUpon>
     </None>
@@ -338,6 +360,18 @@
     <None Include="Resources\tutors.png" />
   </ItemGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -352,18 +386,6 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
