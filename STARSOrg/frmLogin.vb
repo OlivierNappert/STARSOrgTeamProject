@@ -51,6 +51,7 @@
 			End If
 			databaseAuditData.SUCCESS = "False"
 			databaseAuditData.Save()
+			MessageBox.Show("Incorrect Username and/or Password.", "Error", MessageBoxButtons.OK)
 		End If
 	End Sub
 
