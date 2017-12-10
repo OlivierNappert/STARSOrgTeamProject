@@ -3,10 +3,9 @@
     Private MembersInfo As frmMembers
     Private EventInfo As frmEventManager
 	Private EventRSVP As frmEventRSVP
-	Private gstrConn As String = ""
-	Public strSecRole As String
+    Private gstrConn As String = ""
 
-	Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		'instantiate a form object for each form in the application
 		RoleInfo = New frmMemberRoles
 		MembersInfo = New frmMembers
