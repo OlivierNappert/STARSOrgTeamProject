@@ -14,4 +14,8 @@
     Private Sub cboSecurityPriv_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSecurityPriv.SelectedIndexChanged
 
     End Sub
+
+	Private Sub frmNewUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+	End Sub
 End Class

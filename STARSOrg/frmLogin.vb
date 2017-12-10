@@ -39,8 +39,8 @@
 			databaseAuditData.PID = databaseUserData.PID
 			databaseAuditData.SUCCESS = "TRUE"
 			databaseAuditData.Save()
-			StarsOrgMainMenu = New frmMain
-			StarsOrgMainMenu.ShowDialog()
+			StarsOrgMainMenu.Show()
+			Me.Close()
 		Else
 			databaseAuditTable.CreateNewAudit()
 			databaseAuditData = databaseAuditTable.CurrentObject
@@ -55,7 +55,11 @@
 	End Sub
 
 	Private Sub lklChngPass_Click(sender As Object, e As EventArgs) Handles lklChngPass.Click
-		LoginChangePass = New frmLoginChangePass
 		LoginChangePass.ShowDialog()
+	End Sub
+
+	Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles Me.Load
+		LoginChangePass = New frmLoginChangePass
+		StarsOrgMainMenu = New frmMain
 	End Sub
 End Class
