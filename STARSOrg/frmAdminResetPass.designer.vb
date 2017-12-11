@@ -86,6 +86,7 @@ Partial Class frmAdminResetPass
 		Me.Controls.Add(Me.tbxUser)
 		Me.Controls.Add(Me.Label1)
 		Me.Name = "frmAdminResetPass"
+		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Reset Password"
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)

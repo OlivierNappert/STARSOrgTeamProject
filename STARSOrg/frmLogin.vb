@@ -16,6 +16,7 @@ Public Class frmLogin
 	End Sub
 
 	Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+		EndProgram()
 		Application.Exit()
 	End Sub
 
@@ -86,5 +87,29 @@ Public Class frmLogin
 		databaseAuditData = New cAudit
 		strUsername = ""
 		strFrmPassword = ""
+	End Sub
+
+	Private Sub EndProgram()
+		'close each form except main
+		Dim f As Form
+		For Each f In Application.OpenForms
+			If Not String.Equals(f.Name, Me.Name) Then
+				If Not f Is Nothing Then
+					f.Close()
+				End If
+			End If
+		Next
+		'close database connection
+		If Not objSQLConn Is Nothing Then
+			objSQLConn.Close()
+			objSQLConn.Dispose()
+		End If
+		Me.Cursor = Cursors.Default
+		End
+
+	End Sub
+
+	Private Sub frmLogin_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+		EndProgram()
 	End Sub
 End Class

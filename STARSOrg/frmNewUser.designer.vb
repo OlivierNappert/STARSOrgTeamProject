@@ -31,8 +31,8 @@ Partial Class frmNewUser
 		Me.tbxMemberID = New System.Windows.Forms.TextBox()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Label1 = New System.Windows.Forms.Label()
-		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.cboSecurityPriv = New System.Windows.Forms.ComboBox()
+		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
@@ -111,6 +111,16 @@ Partial Class frmNewUser
 		Me.Label1.TabIndex = 20
 		Me.Label1.Text = "Member ID:"
 		'
+		'cboSecurityPriv
+		'
+		Me.cboSecurityPriv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.cboSecurityPriv.FormattingEnabled = True
+		Me.cboSecurityPriv.Items.AddRange(New Object() {"MEMBER", "OFFICER", "ADMIN"})
+		Me.cboSecurityPriv.Location = New System.Drawing.Point(15, 276)
+		Me.cboSecurityPriv.Name = "cboSecurityPriv"
+		Me.cboSecurityPriv.Size = New System.Drawing.Size(181, 21)
+		Me.cboSecurityPriv.TabIndex = 30
+		'
 		'PictureBox1
 		'
 		Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -121,16 +131,6 @@ Partial Class frmNewUser
 		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
 		Me.PictureBox1.TabIndex = 26
 		Me.PictureBox1.TabStop = False
-		'
-		'cboSecurityPriv
-		'
-		Me.cboSecurityPriv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.cboSecurityPriv.FormattingEnabled = True
-		Me.cboSecurityPriv.Items.AddRange(New Object() {"MEMBER", "OFFICER", "ADMIN"})
-		Me.cboSecurityPriv.Location = New System.Drawing.Point(15, 276)
-		Me.cboSecurityPriv.Name = "cboSecurityPriv"
-		Me.cboSecurityPriv.Size = New System.Drawing.Size(181, 21)
-		Me.cboSecurityPriv.TabIndex = 30
 		'
 		'frmNewUser
 		'
@@ -149,6 +149,7 @@ Partial Class frmNewUser
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.Label1)
 		Me.Name = "frmNewUser"
+		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "New User"
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
