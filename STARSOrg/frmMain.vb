@@ -12,14 +12,18 @@
 		MembersInfo = New frmMembers
 		EventInfo = New frmEventManager
 		EventRSVP = New frmEventRSVP
+
 		Try
 			myDB.OpenDB()
 		Catch ex As Exception
 			MessageBox.Show("Unable to open database. Connection string=" & gstrConn & " Program will end", "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-			EndProgram()
+			If Not objSQLConn Is Nothing Then
+				objSQLConn.Close()
+				objSQLConn.Dispose()
+			End If
+			Me.Cursor = Cursors.Default
 			End
 		End Try
-
 		RoleInfo.Hide()
 		MembersInfo.Hide()
 		EventInfo.Hide()

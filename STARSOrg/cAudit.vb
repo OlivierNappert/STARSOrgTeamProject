@@ -8,9 +8,8 @@ Public Class cAudit
     Private _isNewAudit As Boolean
     'constructor
     Public Sub New()
-        'initializing
-        _mstrukid = ""
-        _mstrPID = ""
+		'initializing
+		_mstrPID = ""
         _mstrACCESSTIMESTAMP = ""
         _mstrSUCCESS = ""
     End Sub
@@ -60,25 +59,15 @@ Public Class cAudit
 #End Region
     Public ReadOnly Property GetSaveParameters() As ArrayList
         Get
-            Dim params As New ArrayList
-            params.Add(New SqlParameter("ukid", _mstrukid))
-            params.Add(New SqlParameter("pID", _mstrPID)) 'These are the parameter names that are gonna match our stored procedures
+			Dim params As New ArrayList
+			params.Add(New SqlParameter("pID", _mstrPID)) 'These are the parameter names that are gonna match our stored procedures
             params.Add(New SqlParameter("aCCESSTIMESTAMP", _mstrACCESSTIMESTAMP))
             params.Add(New SqlParameter("sUCCESS", _mstrSUCCESS))
             Return params
         End Get
     End Property
     Public Function Save() As Integer 'This is a stored procedure
-        'return -1 if the ID already exists (and we can't create a new record with duplicate ID)
-        If IsNewAudit Then
-            Dim params As New ArrayList
-            params.Add(New SqlParameter("ukid", _mstrukid))
-            Dim strRes As String = myDB.GetSingleValueFromSP("sp_CheckukidExists", params)
-            If Not strRes = 0 Then
-                Return -1 'This record already exists
-            End If
-        End If
-        'If not a new role, or it is new and has a unique ID, then do the save (update or insert)
-        Return myDB.ExecSP("sp_SaveAudit", GetSaveParameters()) 'Result of 0 means success
-    End Function
+		'return -1 if the ID already exists (and we can't create a new record with duplicate ID)
+		Return myDB.ExecSP("dbo.sp_SaveAudit", GetSaveParameters()) 'Result of 0 means success
+	End Function
 End Class

@@ -34,14 +34,14 @@ Public Class cSecurities
 	Public Function GetSecurityByPID(strID As String) As cSecurity
 		Dim params As New ArrayList
 		params.Add(New SqlParameter("pID", strID))
-		FillObject(myDB.GetDataReaderBySP("dbo.sp_GetSecurityByPID", params))
+		FillObject(myDB.GetDataReaderBySP("dbo.sp_getSecurityByPID", params))
 		Return _Security
 	End Function
 
 	Public Function GetSecurityByUserID(strID As String) As cSecurity
 		Dim params As New ArrayList
 		params.Add(New SqlParameter("userID", strID))
-		FillObject(myDB.GetDataReaderBySP("dbo.sp_GetSecurityByUserID", params))
+		FillObject(myDB.GetDataReaderBySP("dbo.sp_getSecurityByUserID", params))
 		Return _Security
 	End Function
 
