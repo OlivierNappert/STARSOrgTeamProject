@@ -4,8 +4,8 @@ Public Class CEvent
     Private _mstrEventDescription As String
     Private _mstrEventTypeID As String
     Private _mstrSemesterID As String
-    Private _mstrStartDate As String
-    Private _mstrEndDate As String
+    Private _mstrStartDate As Date
+    Private _mstrEndDate As Date
     Private _mstrLocation As String
     Private _isNewEvent As Boolean
     Public Sub New()
@@ -13,8 +13,8 @@ Public Class CEvent
         _mstrEventDescription = ""
         _mstrEventTypeID = ""
         _mstrSemesterID = ""
-        _mstrStartDate = ""
-        _mstrEndDate = ""
+        _mstrStartDate = Today()
+        _mstrEndDate = Today()
         _mstrLocation = ""
 
     End Sub
