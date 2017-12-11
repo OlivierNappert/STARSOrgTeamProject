@@ -1,34 +1,28 @@
 ﻿Imports System.Data.SqlClient
 
+'Frame that shows the Membership management area
 Public Class frmMembers
 
     Private objMembers As cMembers
     Private report As frmMembersReport
+    Private memberRoleInfo As frmMemberRoles
+    Private eventRsvpInfo As frmEventRSVP
+    Private eventInfo As frmEventManager
     Private sqlDA As SqlDataAdapter
     Private dt As DataTable
     Private photoPath As String
     Private blnLoading As Boolean
 
-    Private Sub tsbProxy_MouseEnter(sender As Object, e As EventArgs) Handles tsbEvents.MouseEnter, tsbEvents.MouseEnter, tsbHelp.MouseEnter, tsbHome.MouseEnter, tsbLogOut.MouseEnter, tsbMember.MouseEnter, tsbRole.MouseEnter, tsbRSVP.MouseEnter, tsbSemester.MouseEnter, tsbTutor.MouseEnter
-        'we need to do this only because we are not putting our images in the image proporty, but instead we are using 
-        'the backgroundImage property
-        Dim tsbProxy As ToolStripButton
-        tsbProxy = DirectCast(sender, ToolStripButton)
-        tsbProxy.DisplayStyle = ToolStripItemDisplayStyle.Text
-    End Sub
-    Private Sub tsbProxy_MouseLeave(sender As Object, e As EventArgs) Handles tsbEvents.MouseLeave, tsbEvents.MouseLeave, tsbHelp.MouseLeave, tsbHome.MouseLeave, tsbLogOut.MouseLeave, tsbMember.MouseLeave, tsbRole.MouseLeave, tsbRSVP.MouseLeave, tsbSemester.MouseLeave, tsbTutor.MouseLeave
-        'we need to do this only because we are not putting our images in the image proporty, but instead we are using 
-        'the backgroundImage property
-        Dim tsbProxy As ToolStripButton
-        tsbProxy = DirectCast(sender, ToolStripButton)
-        tsbProxy.DisplayStyle = ToolStripItemDisplayStyle.Image
-    End Sub
-
-
     Private Sub frmMembers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objMembers = New cMembers
         report = New frmMembersReport
+        memberRoleInfo = New frmMemberRoles
+        eventRsvpInfo = New frmEventRSVP
+        eventInfo = New frmEventManager
         report.Hide()
+        memberRoleInfo.Hide()
+        eventRsvpInfo.Hide()
+        eventInfo.Hide()
     End Sub
 
     Private Sub frmMembers_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -39,6 +33,7 @@ Public Class frmMembers
         sslStatus.Text = ""
     End Sub
 
+    'Sub that loads the data
     Private Sub LoadData()
         Dim objReader As SqlDataReader
         blnLoading = True
@@ -80,6 +75,7 @@ Public Class frmMembers
         blnLoading = False
     End Sub
 
+    'Sub that loads the selected member in the Edit fields
     Private Sub LoadSelectedMember()
         Try
             objMembers.GetMemberById(cboMembers.SelectedItem.ToString)
@@ -100,6 +96,7 @@ Public Class frmMembers
         End Try
     End Sub
 
+    'Sub triggered when the search button is pressed
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim blnErrors As Boolean = False
         Dim params As New ArrayList
@@ -149,6 +146,7 @@ Public Class frmMembers
         objReader.Close()
     End Sub
 
+    'Sub that cleans and prepares the frame to change when the Add New member check box's state changes
     Private Sub chkNew_CheckStateChanged(sender As Object, e As EventArgs) Handles chkNew.CheckStateChanged
         If chkNew.Checked Then
             txtMemberID.Clear()
@@ -172,6 +170,7 @@ Public Class frmMembers
         End If
     End Sub
 
+    'Sub that's triggered when a PID is selected in the combo list box and loads the user in the Edit fields
     Private Sub cboMembers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboMembers.SelectedIndexChanged
         If cboMembers.SelectedIndex = -1 Then
             Exit Sub
@@ -183,6 +182,7 @@ Public Class frmMembers
         grpEdit.Enabled = True
     End Sub
 
+    'Sub triggered when the close button is pressed
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         photoPath = Nothing
         grpEdit.Enabled = False
@@ -202,6 +202,7 @@ Public Class frmMembers
         Me.Hide()
     End Sub
 
+    'Sub triggered when the open photo button is pressed
     Private Sub btnOpen_Click(sender As Object, e As EventArgs) Handles btnOpen.Click
         ofdOpenPhoto.FilterIndex = 1
         ofdOpenPhoto.Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png|All files (*.*)|*.*"
@@ -216,6 +217,7 @@ Public Class frmMembers
         ptbPhoto.Image = Image.FromFile(photoPath)
     End Sub
 
+    'Sub triggered when the cancel button is pressed regarding the editing of a member
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         chkNew.Checked = False
         txtMemberID.Clear()
@@ -232,6 +234,7 @@ Public Class frmMembers
         errP.Clear()
     End Sub
 
+    'Sub that is triggered when the save button is pressed, save the user information in the database
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Dim intResult As Integer
         Dim blnErrors As Boolean
@@ -319,6 +322,7 @@ Public Class frmMembers
         grpEdit.Enabled = True
     End Sub
 
+    'Sub called when the clear button is pressed, it reverts the form to the state it was at launch
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         LoadData()
         txtVal.Text = ""
@@ -350,6 +354,7 @@ Public Class frmMembers
         errP.Clear()
     End Sub
 
+    'Sub that handles a change in the line selection of the datagridview, loads the selected user in the edit fields
     Private Sub dgrMembers_SelectionChanged(sender As Object, e As EventArgs) Handles dgrMembers.SelectionChanged
         If blnLoading Then
             Exit Sub
@@ -386,7 +391,69 @@ Public Class frmMembers
         End If
     End Sub
 
+    'Sub that shows the report viewer regarding the members
     Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
         report.Show()
+    End Sub
+
+
+    Private Sub tsbProxy_MouseEnter(sender As Object, e As EventArgs) Handles tsbEvents.MouseEnter, tsbEvents.MouseEnter, tsbHelp.MouseEnter, tsbHome.MouseEnter, tsbLogOut.MouseEnter, tsbMember.MouseEnter, tsbRole.MouseEnter, tsbRSVP.MouseEnter, tsbSemester.MouseEnter, tsbTutor.MouseEnter
+        'we need to do this only because we are not putting our images in the image proporty, but instead we are using 
+        'the backgroundImage property
+        Dim tsbProxy As ToolStripButton
+        tsbProxy = DirectCast(sender, ToolStripButton)
+        tsbProxy.DisplayStyle = ToolStripItemDisplayStyle.Text
+    End Sub
+    Private Sub tsbProxy_MouseLeave(sender As Object, e As EventArgs) Handles tsbEvents.MouseLeave, tsbEvents.MouseLeave, tsbHelp.MouseLeave, tsbHome.MouseLeave, tsbLogOut.MouseLeave, tsbMember.MouseLeave, tsbRole.MouseLeave, tsbRSVP.MouseLeave, tsbSemester.MouseLeave, tsbTutor.MouseLeave
+        'we need to do this only because we are not putting our images in the image proporty, but instead we are using 
+        'the backgroundImage property
+        Dim tsbProxy As ToolStripButton
+        tsbProxy = DirectCast(sender, ToolStripButton)
+        tsbProxy.DisplayStyle = ToolStripItemDisplayStyle.Image
+    End Sub
+
+    Private Sub tsbHome_Click(sender As Object, e As EventArgs) Handles tsbHome.Click
+        Me.Hide()
+    End Sub
+
+    Private Sub EndProgram()
+        'close each form except main
+        Dim f As Form
+        Me.Cursor = Cursors.WaitCursor
+        For Each f In Application.OpenForms
+            If f.Name <> Me.Name Then
+                If Not f Is Nothing Then
+                    f.Close()
+                End If
+            End If
+        Next
+        'close database connection
+        If Not objSQLConn Is Nothing Then
+            objSQLConn.Close()
+            objSQLConn.Dispose()
+        End If
+        Me.Cursor = Cursors.Default
+        End
+
+    End Sub
+    Private Sub tsbLogOut_Click(sender As Object, e As EventArgs) Handles tsbLogOut.Click
+        EndProgram()
+        Me.Close()
+        Application.Exit()
+    End Sub
+
+    Private Sub tsbRole_Click(sender As Object, e As EventArgs) Handles tsbRole.Click
+        Me.Hide()
+        memberRoleInfo.Show()
+    End Sub
+
+    Private Sub tsbRSVP_Click(sender As Object, e As EventArgs) Handles tsbRSVP.Click
+        Me.Hide()
+        eventRsvpInfo.Show()
+    End Sub
+
+    Private Sub tsbEvents_Click(sender As Object, e As EventArgs) Handles tsbEvents.Click
+        Me.Hide()
+        eventInfo.Show()
     End Sub
 End Class

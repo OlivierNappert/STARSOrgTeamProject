@@ -16,12 +16,7 @@
     Public intNextAction As Integer
     Public myDB As New CDB
     Public CurrentSemesterID As String = "fa17"
-	Public strCurrUserPID As String
-	Public strCurrUserUserID As String
-	Public strCurrUserSecRole As String
-
-
-
-
-
+    Public strCurrUserPID As String
+    Public strCurrUserUserID As String
+    Public strCurrUserSecRole As String
 End Module
