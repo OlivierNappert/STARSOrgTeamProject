@@ -19,6 +19,16 @@
 	Public strCurrUserPID As String
 	Public strCurrUserUserID As String
 	Public strCurrUserSecRole As String
+    Public frmMain As Form
+    Public frmMemberRoles As Form
+    Public frmMembers As Form
+    Public frmMembersReport As Form
+    Public frmAdminCHoice As Form
+    Public frmAdminResetPass As Form
+    Public frmEventManger As Form
+    Public frmEventRSVP As Form
+    Public frmLogin As Form
+    Public frmLoginChangePass As Form
 
 
 
