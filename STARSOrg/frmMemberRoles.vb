@@ -8,13 +8,17 @@ Public Class frmMemberRoles
     Private blnClearing As Boolean
     Private blnReloading As Boolean
     Private objMemberRAL As ArrayList
-    Private strSecRole As String
+
 
 
     Private Sub frmMemberRoles_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        loadMembers()
-        If strSecRole IsNot "Admin" Or strSecRole IsNot "Officer" Then
+        cmb_Semester.SelectedIndex = 0
+        cmb_Year.SelectedIndex = 0
+        LoadMembers()
+        If strCurrUserSecRole IsNot "Admin" Or strCurrUserSecRole IsNot "Officer" Then
+            btnNoAccess.Visible = False
+            btnAdd.Visible = True
+            btnRemove.Visible = True
 
         End If
 
