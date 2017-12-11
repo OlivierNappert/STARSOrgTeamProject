@@ -275,6 +275,7 @@ Partial Class frmEventManager
         Me.btnEdit.TabIndex = 11
         Me.btnEdit.Text = "Edit"
         Me.btnEdit.UseVisualStyleBackColor = True
+        Me.btnEdit.Visible = False
         '
         'btnReport
         '

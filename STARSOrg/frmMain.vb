@@ -96,7 +96,7 @@
     End Sub
 
     Private Sub tsbMember_Click(sender As Object, e As EventArgs) Handles tsbMember.Click
-        If Not strSecRole = "ADMIN" Or strSecRole = "OFFICER" Then
+        If Not strCurrUserSecRole = "ADMIN" Or strCurrUserSecRole = "OFFICER" Then
             MessageBox.Show("Error, you need to be logged in as an Officer or an Admin to access that screen.", "Role error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             MembersInfo.Show()
