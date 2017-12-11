@@ -2,6 +2,7 @@
 	Private strMemberID As String
 	Private databaseSecurityTable As cSecurities
 	Private databaseUserData As cSecurity
+	Private AdminChoice As frmAdminChoice
 
 	Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
 		Me.Close()
@@ -9,7 +10,11 @@
 
 	Private Sub btnResetPassword_Click(sender As Object, e As EventArgs) Handles btnResetPassword.Click
 		strMemberID = tbxUser.Text
-		If databaseSecurityTable.GetSecurityByPID(strMemberID).PID Is strMemberID Then
+		If (strMemberID.Length > 7) Then
+			MessageBox.Show("The Member ID cannot be longer than 7 characters", "Error", MessageBoxButtons.OK)
+			Exit Sub
+		End If
+		If String.Equals(databaseSecurityTable.GetSecurityByPID(strMemberID).PID, strMemberID) Then
 			databaseUserData = databaseSecurityTable.CurrentObject
 			databaseUserData.Password = databaseUserData.PID
 			databaseUserData.Save()
@@ -21,6 +26,9 @@
 	End Sub
 
 	Private Sub frmAdminResetPass_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+		databaseSecurityTable = New cSecurities
+		databaseUserData = New cSecurity
+		strMemberID = ""
+		AdminChoice = New frmAdminChoice
 	End Sub
 End Class

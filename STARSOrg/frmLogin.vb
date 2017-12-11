@@ -25,10 +25,8 @@ Public Class frmLogin
 
 		If String.Equals(databaseSecurityTable.GetSecurityByUserID(strUsername).UserID, strUsername) Then
 			databaseUserData = databaseSecurityTable.GetSecurityByUserID(strUsername)
-			MessageBox.Show("entry found")
 			If (String.Equals(strUsername, databaseUserData.UserID) And String.Equals(strFrmPassword, databaseUserData.Password)) Then
 				blnLoginAttempt = True
-				MessageBox.Show("good shit")
 			Else
 				blnLoginAttempt = False
 			End If
@@ -90,21 +88,11 @@ Public Class frmLogin
 	End Sub
 
 	Private Sub EndProgram()
-		'close each form except main
-		Dim f As Form
-		For Each f In Application.OpenForms
-			If Not String.Equals(f.Name, Me.Name) Then
-				If Not f Is Nothing Then
-					f.Close()
-				End If
-			End If
-		Next
 		'close database connection
 		If Not objSQLConn Is Nothing Then
 			objSQLConn.Close()
 			objSQLConn.Dispose()
 		End If
-		Me.Cursor = Cursors.Default
 		End
 
 	End Sub

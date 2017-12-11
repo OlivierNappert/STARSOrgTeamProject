@@ -31,6 +31,10 @@
 
 	Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
 		LoadLoginChangePassInfo()
+		If strUsername.Length > 15 Then
+			MessageBox.Show("Incorrect Username and/or Password.", "Error", MessageBoxButtons.OK)
+			Exit Sub
+		End If
 		If strFrmNewPassword.Length > 8 Then
 			MessageBox.Show("Passwords can only have a maximum of 8 characters", "Error", MessageBoxButtons.OK)
 			Exit Sub
