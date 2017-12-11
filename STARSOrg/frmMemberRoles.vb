@@ -1,18 +1,40 @@
 ﻿Imports System.Data.SqlClient
 Public Class frmMemberRoles
-    Private currentPID As String
-    Private currentSemester As String
+    Private strCurrentPID As String
+    Private strCurrentSemester As String
+
     Private objMemberRoles As cMemberRoles
+    Private objMembers As cMembers
     Private blnClearing As Boolean
     Private blnReloading As Boolean
     Private objMemberRAL As ArrayList
+    Private strSecRole As String
 
 
     Private Sub frmMemberRoles_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        cbo_Semester.SelectedIndex = 0
-        currentSemester = "Fall"
+        loadMembers()
+        If strSecRole IsNot "Admin" Or strSecRole IsNot "Officer" Then
+
+        End If
+
         objMemberRoles = New cMemberRoles
+    End Sub
+
+    Private Sub CurrentSemester() Handles cmb_Semester.SelectedIndexChanged, cmb_Year.SelectedIndexChanged
+        strCurrentSemester = ""
+        If cmb_Semester.SelectedIndex = 0 Then
+            strCurrentSemester = "Fa"
+        End If
+        If cmb_Semester.SelectedIndex = 1 Then
+            strCurrentSemester = "Sp"
+        End If
+        If cmb_Year.SelectedIndex = 0 Then
+            strCurrentSemester += "17"
+        End If
+        If cmb_Year.SelectedIndex = 1 Then
+            strCurrentSemester += "18"
+        End If
     End Sub
 
     Private Sub tsbProxy_MouseEnter(sender As Object, e As EventArgs) Handles tsbEvents.MouseEnter, tsbTutor.MouseEnter, tsbRSVP.MouseEnter, tsbRole.MouseEnter, tsbMember.MouseEnter, tsbLogOut.MouseEnter, tsbHome.MouseEnter, tsbHelp.MouseEnter
@@ -41,14 +63,31 @@ Public Class frmMemberRoles
             clb_MemberRoles.Items.IndexOf(i)
             i = i + 1
         Next
-
+        lstMembers.Items.Clear()
     End Sub
-    Private Sub LoadRoles()
+    Private Sub LoadMembers()
         Dim objReader As SqlDataReader
         clearCheckListBox()
-
+        '        ModDB.objSQLCommand.CommandType = CommandType.StoredProcedure
         Try
-            objReader = objMemberRoles.GetMemberRoles(currentPID, currentSemester)
+            objReader = objMembers.GetAllMembers
+            Do While objReader.Read
+                lstMembers.Items.Add(objReader.Item("PID"))
+            Loop
+            objReader.Close()
+        Catch ex As Exception
+
+        End Try
+
+        '    objReader.Close()
+
+    End Sub
+    Public Function GetRoles() As SqlDataReader Handles lstMembers.SelectedIndexChanged
+        Dim objReader As SqlDataReader
+        Dim strPIDCurrent As String
+        strPIDCurrent = lstMembers.SelectedItem
+        Try
+            objReader = objMemberRoles.GetMemberRoles(strCurrentPID, strCurrentSemester)
 
             Do While objReader.Read
                 If objReader.Item("RoleID") = "Admin" Then
@@ -70,66 +109,41 @@ Public Class frmMemberRoles
             '      MessageBox.Show("Error in frmRoles:LoadMemberRoles",)
         End Try
 
-        '    objReader.Close()
-
-    End Sub
-    Public Function GetAllRoles() As SqlDataReader
-        Return myDB.GetDataReaderBySP("dbo.sp_getAllRoles", Nothing)
     End Function
 
 
 
 
+    Private Sub btnSave_Click(sender As Object, e As EventArgs)
+        Dim objReader As SqlDataReader
+        Dim strPIDCurrent As String
+        strPIDCurrent = lstMembers.SelectedItem
+        Try
 
-    Private Sub frmRoles_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-        '    ClearScreenControls(Me)
-        LoadRoles()
-        grpEdit.Enabled = False
+
+            For index As Integer = 0 To lstMembers.Items.Count - 1
+                If lstMembers.SelectedItem("RoleID") = "Admin" Then
+                    clb_MemberRoles.SetItemCheckState(0, True)
+                End If
+                If objReader.Item("RoleID") = "Officer" Then
+                    clb_MemberRoles.SetItemCheckState(1, True)
+                End If
+                If objReader.Item("RoleID") = "Tutor" Then
+                    clb_MemberRoles.SetItemCheckState(3, True)
+                End If
+                If objReader.Item("RoleID") = "Member" Then
+                    clb_MemberRoles.SetItemCheckState(4, True)
+                End If
+                index += 1
+            Next
+
+        Catch ex As Exception
+            '      MessageBox.Show("Error in frmRoles:LoadMemberRoles",)
+        End Try
     End Sub
 
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
 
-
-    Private Sub lstRoles_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-
-
-    'Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-    '    Dim intResult As Integer
-    '    Dim blnErrors As Boolean
-    '    sslStatus.Text = ""
-    '    'add your valdation from modErrhandler here
-    '    If blnErrors Then
-    '        Exit Sub
-    '    End If
-    '    'if we get this far, all of the input data is acceptable
-    '    With objMemberRoles
-    '        .PID = txtMemberRoleID.Text
-    '        .RoleDescription = txtDesc.Text
-    '    End With
-    '    Try
-    '        Me.Cursor = Cursors.WaitCursor
-    '        intResult = objRoles.Save
-    '        If intResult = 1 Then
-    '            sslStatus.Text = "Role record saved"
-    '        End If
-    '        If intResult = -1 Then 'ID was not unique
-    '            'messagebox role ID must be unique unable to save this record, warning
-    '            sslStatus.Text = "Error"
-    '        End If
-    '    Catch ex As Exception
-    '        'messagebox unable to save role record & ex.toString
-    '    End Try
-    '    Me.Cursor = Cursors.Default
-    '    blnReloading = True
-    '    LoadRoles()
-    '    chkNew.Checked = False
-    '    grpRoles.Enabled = True 'in case it was disabled for a new record
-    'End Sub
-
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        txtMemberRoleID.Text = ""
 
         clearCheckListBox()
 
@@ -139,17 +153,8 @@ Public Class frmMemberRoles
         'errp.clear
     End Sub
 
-
-    Private Sub txtMemberRoleID_TextChanged(sender As Object, e As EventArgs) Handles txtMemberRoleID.TextChanged
-        currentPID = txtMemberRoleID.Text
-    End Sub
-
-    Private Sub cbo_Semester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Semester.SelectedIndexChanged
-        currentSemester = cbo_Semester.GetItemText(cbo_Semester.SelectedItem)
-    End Sub
-
-    Private Sub chkNew_CheckedChanged(sender As Object, e As EventArgs) Handles chkNew.CheckedChanged
-        'If admin or officer only
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        '    clb_MemberRoles.CheckedIndexCollection
 
     End Sub
 End Class

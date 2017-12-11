@@ -105,9 +105,11 @@ Public Class CDB
                 For Each p As SqlParameter In params
                     sqlComm.Parameters.Add(p)
                 Next
+
             End If
             Return sqlComm.ExecuteNonQuery
         Catch ex As Exception
+            MessageBox.Show(ex.ToString)
             Return -1
         End Try
 

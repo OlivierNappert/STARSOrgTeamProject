@@ -23,6 +23,7 @@ Partial Class frmRSVPReport
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.MEMBERBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dataSetMembers = New STARSOrg.dataSetMembers()
         Me.btnClose = New System.Windows.Forms.Button()
@@ -58,10 +59,15 @@ Partial Class frmRSVPReport
         '
         'rptEvents
         '
+        ReportDataSource1.Name = "dataSetMembers"
+        ReportDataSource1.Value = Me.MEMBERBindingSource
+        Me.rptEvents.LocalReport.DataSources.Add(ReportDataSource1)
         Me.rptEvents.Location = New System.Drawing.Point(12, 12)
         Me.rptEvents.Name = "rptEvents"
         Me.rptEvents.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote
         Me.rptEvents.ServerReport.BearerToken = Nothing
+        Me.rptEvents.ServerReport.ReportPath = "DataSetEvents.xsd"
+        Me.rptEvents.ServerReport.ReportServerUrl = New System.Uri("C:\Users\Shade\source\repos\STARSOrgTeamProject3\STARSOrg\DataSetEvents.xsd", System.UriKind.Absolute)
         Me.rptEvents.Size = New System.Drawing.Size(758, 373)
         Me.rptEvents.TabIndex = 4
         '
