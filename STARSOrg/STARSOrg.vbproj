@@ -369,13 +369,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="STARSDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="STARSDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>STARSDB.mdf</DependentUpon>
-    </Content>
+    <None Include="Resources\Admin.png" />
     <Content Include="StarsOrg.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
