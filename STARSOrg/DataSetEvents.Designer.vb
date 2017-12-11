@@ -844,9 +844,9 @@ Namespace DataSetEventsTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [EVENT_RSVP] WHERE (([ukid] = @Original_ukid) AND ([EventID] = @Origi"& _ 
-                "nal_EventID) AND ([FName] = @Original_FName) AND ([LName] = @Original_LName) AND"& _ 
-                " ([Email] = @Original_Email))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[EVENT_RSVP] WHERE (([ukid] = @Original_ukid) AND ([EventID] = "& _ 
+                "@Original_EventID) AND ([FName] = @Original_FName) AND ([LName] = @Original_LNam"& _ 
+                "e) AND ([Email] = @Original_Email))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ukid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ukid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EventID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EventID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -855,9 +855,9 @@ Namespace DataSetEventsTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Email", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Email", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [EVENT_RSVP] ([EventID], [FName], [LName], [Email]) VALUES (@EventID,"& _ 
-                " @FName, @LName, @Email);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ukid, EventID, FName, LName, Email FROM EVENT_"& _ 
-                "RSVP WHERE (ukid = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[EVENT_RSVP] ([EventID], [FName], [LName], [Email]) VALUES (@Ev"& _ 
+                "entID, @FName, @LName, @Email);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ukid, EventID, FName, LName, Email FROM "& _ 
+                "EVENT_RSVP WHERE (ukid = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EventID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EventID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -865,11 +865,11 @@ Namespace DataSetEventsTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Email", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [EVENT_RSVP] SET [EventID] = @EventID, [FName] = @FName, [LName] = @LName,"& _ 
-                " [Email] = @Email WHERE (([ukid] = @Original_ukid) AND ([EventID] = @Original_Ev"& _ 
-                "entID) AND ([FName] = @Original_FName) AND ([LName] = @Original_LName) AND ([Ema"& _ 
-                "il] = @Original_Email));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ukid, EventID, FName, LName, Email FROM EVENT_R"& _ 
-                "SVP WHERE (ukid = @ukid)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[EVENT_RSVP] SET [EventID] = @EventID, [FName] = @FName, [LName] = @"& _ 
+                "LName, [Email] = @Email WHERE (([ukid] = @Original_ukid) AND ([EventID] = @Origi"& _ 
+                "nal_EventID) AND ([FName] = @Original_FName) AND ([LName] = @Original_LName) AND"& _ 
+                " ([Email] = @Original_Email));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ukid, EventID, FName, LName, Email FROM E"& _ 
+                "VENT_RSVP WHERE (ukid = @ukid)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EventID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EventID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -896,7 +896,7 @@ Namespace DataSetEventsTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        EVENT_RSVP.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            EVENT_RSVP"
+            Me._commandCollection(0).CommandText = "SELECT ukid, EventID, FName, LName, Email FROM dbo.EVENT_RSVP"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

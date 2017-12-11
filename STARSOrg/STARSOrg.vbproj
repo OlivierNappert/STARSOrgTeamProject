@@ -137,9 +137,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetEvents.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSetEvents.vb">
-      <DependentUpon>DataSetEvents.xsd</DependentUpon>
-    </Compile>
     <Compile Include="dataSetMembers.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -370,6 +367,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="STARSDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="STARSDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>STARSDB.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
