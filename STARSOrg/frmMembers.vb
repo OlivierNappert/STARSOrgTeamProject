@@ -15,11 +15,9 @@ Public Class frmMembers
 
     Private Sub frmMembers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objMembers = New cMembers
-        report = New frmMembersReport
         memberRoleInfo = New frmMemberRoles
         eventRsvpInfo = New frmEventRSVP
         eventInfo = New frmEventManager
-        report.Hide()
         memberRoleInfo.Hide()
         eventRsvpInfo.Hide()
         eventInfo.Hide()
@@ -393,6 +391,7 @@ Public Class frmMembers
 
     'Sub that shows the report viewer regarding the members
     Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
+        report = New frmMembersReport
         report.Show()
     End Sub
 

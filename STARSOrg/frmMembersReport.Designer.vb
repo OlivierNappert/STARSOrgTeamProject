@@ -24,24 +24,14 @@ Partial Class frmMembersReport
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.btnClose = New System.Windows.Forms.Button()
         Me.MEMBERBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dataSetMembers = New STARSOrg.dataSetMembers()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.MEMBERTableAdapter = New STARSOrg.dataSetMembersTableAdapters.MEMBERTableAdapter()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.MEMBERBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataSetMembers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'btnClose
-        '
-        Me.btnClose.Location = New System.Drawing.Point(946, 479)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(126, 35)
-        Me.btnClose.TabIndex = 1
-        Me.btnClose.Text = "Close"
-        Me.btnClose.UseVisualStyleBackColor = True
         '
         'MEMBERBindingSource
         '
@@ -52,6 +42,16 @@ Partial Class frmMembersReport
         '
         Me.dataSetMembers.DataSetName = "dataSetMembers"
         Me.dataSetMembers.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'btnClose
+        '
+        Me.btnClose.Location = New System.Drawing.Point(946, 479)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(126, 35)
+        Me.btnClose.TabIndex = 1
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = True
         '
         'MEMBERTableAdapter
         '
