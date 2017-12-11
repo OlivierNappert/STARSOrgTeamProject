@@ -77,10 +77,10 @@ Public Class frmMemberRoles
             Loop
 
         Catch ex As Exception
-            '      MessageBox.Show("Error in frmRoles:LoadMemberRoles",)
+            MessageBox.Show("Error in frmRoles:LoadMemberRoles", "Error")
         End Try
 
-        '    objReader.Close()
+        objReader.Close()
 
     End Sub
     Public Function GetAllRoles() As SqlDataReader
