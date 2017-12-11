@@ -98,19 +98,31 @@
     End Sub
 
 	Private Sub tsbAdmin_Click(sender As Object, e As EventArgs) Handles tsbAdmin.Click
-		AdminChoice.ShowDialog()
+		AdminChoice.Show()
 	End Sub
-
-	Private Sub tsbLogOut_Click(sender As Object, e As EventArgs) Handles tsbLogOut.Click
+	Private Sub EndProgram()
+		'close each form except main
 		Dim f As Form
+		Me.Cursor = Cursors.WaitCursor
 		For Each f In Application.OpenForms
-			If Not (String.Equals(f.Name, Me.Name) Or String.Equals(f.Name, Login.Name)) Then
+			If f.Name <> Me.Name Then
 				If Not f Is Nothing Then
 					f.Close()
 				End If
 			End If
 		Next
+		'close database connection
+		If Not objSQLConn Is Nothing Then
+			objSQLConn.Close()
+			objSQLConn.Dispose()
+		End If
+		Me.Cursor = Cursors.Default
+		End
+
+	End Sub
+	Private Sub tsbLogOut_Click(sender As Object, e As EventArgs) Handles tsbLogOut.Click
+		EndProgram()
 		Me.Close()
-		Login.Show()
+		Application.Exit()
 	End Sub
 End Class

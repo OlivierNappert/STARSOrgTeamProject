@@ -9,15 +9,13 @@
 
 	Private Sub btnNewUser_Click(sender As Object, e As EventArgs) Handles btnNewUser.Click
 		NewUserMenu.ShowDialog()
-		Me.Close()
 	End Sub
 
 	Private Sub btnResetPass_Click(sender As Object, e As EventArgs) Handles btnResetPass.Click
 		AdminResetPassMenu.ShowDialog()
-		Me.Close()
 	End Sub
 
 	Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-		Me.Close()
+		Me.Hide()
 	End Sub
 End Class
