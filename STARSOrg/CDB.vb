@@ -5,13 +5,13 @@ Public Class CDB
         Dim blnResult As Boolean = False
         If objSQLConn Is Nothing Then
             Try
-                objSQLConn = New SqlConnection(gstConn)
-                objSQLConn.Open()
+				objSQLConn = New SqlConnection(gstrConn)
+				objSQLConn.Open()
                 blnResult = True
 
             Catch exOpenConnError As Exception
-                MessageBox.Show(exOpenConnError.ToString, "Connectino Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                blnResult = False 'should error log this better
+				MessageBox.Show(exOpenConnError.ToString, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+				blnResult = False 'should error log this better
             End Try
             Return blnResult
 

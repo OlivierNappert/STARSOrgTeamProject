@@ -74,8 +74,8 @@ Public Class cSecurity
             Dim params As New ArrayList
 			params.Add(New SqlParameter("pID", _mstrPID))
 			params.Add(New SqlParameter("userID", _mstrUserID))
-			Dim strRes As String = myDB.GetSingleValueFromSP("sp_CheckPIDExists", params)
-			Dim strRes2 As String = myDB.GetSingleValueFromSP("sp_CheckUserIDExists", params)
+			Dim strRes As String = myDB.GetSingleValueFromSP("dbo.sp_CheckPIDExists", params)
+			Dim strRes2 As String = myDB.GetSingleValueFromSP("dbo.sp_CheckUserIDExists", params)
 			If Not strRes = 0 And strRes2 = 0 Then
 				Return -1 'This record already exists
 			End If
