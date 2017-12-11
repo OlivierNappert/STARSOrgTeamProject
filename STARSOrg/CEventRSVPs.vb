@@ -28,7 +28,7 @@ Public Class CEventRSVPs
     End Function
 
     Public Function GetAllEventRSVPs() As SqlDataReader
-        Return myDB.GetDataReaderBySP("dbo.sp_getAllEventRSVPs", Nothing)
+        Return myDB.GetDataReaderBySP("dbo.GetAllEventRSVPs", Nothing)
     End Function
 
     Public Function GetEventTypeByID(strID As String) As CEventRSVP
