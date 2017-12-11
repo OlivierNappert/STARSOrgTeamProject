@@ -23,11 +23,12 @@ Partial Class frmMembersReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.MEMBERBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dataSetMembers = New STARSOrg.dataSetMembers()
-        Me.MEMBERTableAdapter = New STARSOrg.dataSetMembersTableAdapters.MEMBERTableAdapter()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.lstReport = New System.Windows.Forms.ListView()
+        Me.MEMBERTableAdapter = New STARSOrg.dataSetMembersTableAdapters.MEMBERTableAdapter()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.MEMBERBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataSetMembers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -42,34 +43,38 @@ Partial Class frmMembersReport
         Me.dataSetMembers.DataSetName = "dataSetMembers"
         Me.dataSetMembers.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'MEMBERTableAdapter
-        '
-        Me.MEMBERTableAdapter.ClearBeforeFill = True
-        '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(841, 383)
+        Me.btnClose.Location = New System.Drawing.Point(946, 479)
         Me.btnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(112, 28)
+        Me.btnClose.Size = New System.Drawing.Size(126, 35)
         Me.btnClose.TabIndex = 1
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
-        'lstReport
+        'MEMBERTableAdapter
         '
-        Me.lstReport.Location = New System.Drawing.Point(10, 12)
-        Me.lstReport.Name = "lstReport"
-        Me.lstReport.Size = New System.Drawing.Size(942, 359)
-        Me.lstReport.TabIndex = 2
-        Me.lstReport.UseCompatibleStateImageBehavior = False
+        Me.MEMBERTableAdapter.ClearBeforeFill = True
+        '
+        'ReportViewer1
+        '
+        ReportDataSource1.Name = "dataSetMembers"
+        ReportDataSource1.Value = Me.MEMBERBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "STARSOrg.rptMembers.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(1, 0)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.ServerReport.BearerToken = Nothing
+        Me.ReportViewer1.Size = New System.Drawing.Size(1082, 474)
+        Me.ReportViewer1.TabIndex = 2
         '
         'frmMembersReport
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(964, 420)
-        Me.Controls.Add(Me.lstReport)
+        Me.ClientSize = New System.Drawing.Size(1084, 525)
+        Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.btnClose)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "frmMembersReport"
@@ -83,5 +88,5 @@ Partial Class frmMembersReport
     Friend WithEvents dataSetMembers As dataSetMembers
     Friend WithEvents MEMBERTableAdapter As dataSetMembersTableAdapters.MEMBERTableAdapter
     Friend WithEvents btnClose As Button
-    Friend WithEvents lstReport As ListView
+    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
 End Class
