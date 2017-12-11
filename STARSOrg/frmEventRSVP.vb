@@ -66,10 +66,10 @@ Public Class frmEventRSVP
         txtEmail.Clear()
         txtFirstName.Clear()
         txtLastName.Clear()
-        txtMiddleName.Clear()
+		'txtMiddleName.Clear()
 
 
-        Me.Hide()
+		Me.Hide()
 
     End Sub
 
