@@ -2,11 +2,11 @@
 
 Public Class frmMembersReport
 
-    Private objRoles As cMemberRoles
+    Private objMemberRoles As cMemberRoles
     Private Sub frmMembersReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objReader As SqlDataReader
         Try
-            objReader = objMemberRoles.GetAllMemberRoles
+            objReader = objMemberRoles.GetMembersAndRoles("")
             Do While objReader.Read
                 lstReport.Items.Add(objReader.Item("PID"))
             Loop
@@ -24,6 +24,10 @@ Public Class frmMembersReport
     End Sub
 
     Private Sub drgReport_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+
+    End Sub
+
+    Private Sub lstReport_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstReport.SelectedIndexChanged
 
     End Sub
 End Class

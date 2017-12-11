@@ -36,7 +36,7 @@ Public Class cMemberRoles
         Return (myDB.GetDataReaderBySP("dbo.sp_GetMemberRolesPIDSEMESTER", params))
 
     End Function
-    Public Function GetMembersAndRoles(PID As String, SemesterID As String) As SqlDataReader
+    Public Function GetMembersAndRoles(PID As String) As SqlDataReader
         Dim params As New ArrayList
         params.Add(New SqlParameter("PID", PID))
         params.Add(New SqlParameter("SemesterID", SemesterID))
