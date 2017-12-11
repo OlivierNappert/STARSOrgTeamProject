@@ -62,6 +62,7 @@ Partial Class frmMemberRoles
         Me.MEMBERTableAdapter = New STARSOrg.dataSetMembersTableAdapters.MEMBERTableAdapter()
         Me.lstMembers = New System.Windows.Forms.ListBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnNoAccess = New System.Windows.Forms.Button()
         Me.ToolStrip1.SuspendLayout()
         Me.grpNew.SuspendLayout()
         Me.grpRoles.SuspendLayout()
@@ -311,6 +312,7 @@ Partial Class frmMemberRoles
         '
         'grpRoles
         '
+        Me.grpRoles.Controls.Add(Me.btnNoAccess)
         Me.grpRoles.Controls.Add(Me.cmb_Year)
         Me.grpRoles.Controls.Add(Me.cmb_Semester)
         Me.grpRoles.Controls.Add(Me.Label3)
@@ -424,6 +426,14 @@ Partial Class frmMemberRoles
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "GroupBox1"
         '
+        'btnNoAccess
+        '
+        Me.btnNoAccess.Location = New System.Drawing.Point(3, 24)
+        Me.btnNoAccess.Name = "btnNoAccess"
+        Me.btnNoAccess.Size = New System.Drawing.Size(25, 72)
+        Me.btnNoAccess.TabIndex = 20
+        Me.btnNoAccess.UseVisualStyleBackColor = True
+        '
         'frmMemberRoles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -498,4 +508,5 @@ Partial Class frmMemberRoles
     Friend WithEvents cmb_Year As ComboBox
     Friend WithEvents cmb_Semester As ComboBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents btnNoAccess As Button
 End Class

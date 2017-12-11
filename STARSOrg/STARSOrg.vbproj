@@ -370,6 +370,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Admin.png" />
+    <Content Include="Event Stored Procedures\dbo.GetAllEventRSVPs.sql" />
+    <Content Include="Event Stored Procedures\dbo.sp_CheckEventIDExists.sql" />
+    <Content Include="Event Stored Procedures\dbo.sp_CheckEventRSVPExists.sql" />
+    <Content Include="Event Stored Procedures\dbo.sp_CheckEventTypeIDExists.sql" />
+    <Content Include="Event Stored Procedures\dbo.sp_getAllEventTypes.sql" />
+    <Content Include="Event Stored Procedures\dbo.sp_getEventTypeByID.sql" />
+    <Content Include="Event Stored Procedures\dbo.sp_getRSVPByID.sql" />
+    <Content Include="Event Stored Procedures\dbo.sp_SaveEventType.sql" />
     <Content Include="StarsOrg.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -1,0 +1,5 @@
+﻿CREATE PROCEDURE [dbo].sp_getAllEventTypes
+
+AS
+	SELECT * FROM EVENT_TYPE
+RETURN 0

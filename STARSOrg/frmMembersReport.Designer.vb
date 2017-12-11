@@ -23,12 +23,11 @@ Partial Class frmMembersReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.MEMBERBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dataSetMembers = New STARSOrg.dataSetMembers()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.MEMBERTableAdapter = New STARSOrg.dataSetMembersTableAdapters.MEMBERTableAdapter()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.lstReport = New System.Windows.Forms.ListView()
         CType(Me.MEMBERBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataSetMembers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -43,41 +42,36 @@ Partial Class frmMembersReport
         Me.dataSetMembers.DataSetName = "dataSetMembers"
         Me.dataSetMembers.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'ReportViewer1
-        '
-        ReportDataSource1.Name = "dataSetMembers"
-        ReportDataSource1.Value = Me.MEMBERBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "STARSOrg.rptMembers.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(724, 307)
-        Me.ReportViewer1.TabIndex = 0
-        '
         'MEMBERTableAdapter
         '
         Me.MEMBERTableAdapter.ClearBeforeFill = True
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(631, 311)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnClose.Location = New System.Drawing.Point(841, 383)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(84, 23)
+        Me.btnClose.Size = New System.Drawing.Size(112, 28)
         Me.btnClose.TabIndex = 1
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
+        'lstReport
+        '
+        Me.lstReport.Location = New System.Drawing.Point(10, 12)
+        Me.lstReport.Name = "lstReport"
+        Me.lstReport.Size = New System.Drawing.Size(942, 359)
+        Me.lstReport.TabIndex = 2
+        Me.lstReport.UseCompatibleStateImageBehavior = False
+        '
         'frmMembersReport
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(723, 341)
+        Me.ClientSize = New System.Drawing.Size(964, 420)
+        Me.Controls.Add(Me.lstReport)
         Me.Controls.Add(Me.btnClose)
-        Me.Controls.Add(Me.ReportViewer1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "frmMembersReport"
         Me.Text = "frmMembersReport"
         CType(Me.MEMBERBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -85,10 +79,9 @@ Partial Class frmMembersReport
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents MEMBERBindingSource As BindingSource
     Friend WithEvents dataSetMembers As dataSetMembers
     Friend WithEvents MEMBERTableAdapter As dataSetMembersTableAdapters.MEMBERTableAdapter
     Friend WithEvents btnClose As Button
+    Friend WithEvents lstReport As ListView
 End Class
