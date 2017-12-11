@@ -42,7 +42,6 @@ Partial Class frmEventRSVP
         Me.tsbLogOut = New System.Windows.Forms.ToolStripButton()
         Me.tsbTutor = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.lsbEventRSVP = New System.Windows.Forms.ListBox()
         Me.btnRSVP = New System.Windows.Forms.Button()
         Me.grpAddRSVP = New System.Windows.Forms.GroupBox()
         Me.btnCancel = New System.Windows.Forms.Button()
@@ -55,9 +54,11 @@ Partial Class frmEventRSVP
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.dgrEventRSVP = New System.Windows.Forms.DataGridView()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.grpAddRSVP.SuspendLayout()
+        CType(Me.dgrEventRSVP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -68,7 +69,7 @@ Partial Class frmEventRSVP
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbHome, Me.ToolStripSeparator6, Me.tsbMember, Me.ToolStripSeparator5, Me.tsbRole, Me.ToolStripSeparator2, Me.tsbEvents, Me.ToolStripSeparator3, Me.tsbRSVP, Me.ToolStripSeparator1, Me.ToolStripButton8, Me.ToolStripSeparator4, Me.tsbSemester, Me.tsbHelp, Me.ToolStripSeparator8, Me.ToolStripSeparator7, Me.tsbLogOut, Me.tsbTutor})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(912, 50)
+        Me.ToolStrip1.Size = New System.Drawing.Size(684, 41)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -147,7 +148,7 @@ Partial Class frmEventRSVP
         Me.tsbRSVP.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.tsbRSVP.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbRSVP.Name = "tsbRSVP"
-        Me.tsbRSVP.Size = New System.Drawing.Size(23, 47)
+        Me.tsbRSVP.Size = New System.Drawing.Size(23, 38)
         Me.tsbRSVP.Text = "RSVP"
         '
         'ToolStripSeparator1
@@ -234,33 +235,20 @@ Partial Class frmEventRSVP
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.lsbEventRSVP)
+        Me.GroupBox3.Controls.Add(Me.dgrEventRSVP)
         Me.GroupBox3.Controls.Add(Me.btnRSVP)
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 97)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 79)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox3.Size = New System.Drawing.Size(399, 417)
+        Me.GroupBox3.Size = New System.Drawing.Size(299, 339)
         Me.GroupBox3.TabIndex = 5
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Event RSVP"
         '
-        'lsbEventRSVP
-        '
-        Me.lsbEventRSVP.FormattingEnabled = True
-        Me.lsbEventRSVP.ItemHeight = 16
-        Me.lsbEventRSVP.Location = New System.Drawing.Point(35, 23)
-        Me.lsbEventRSVP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.lsbEventRSVP.Name = "lsbEventRSVP"
-        Me.lsbEventRSVP.Size = New System.Drawing.Size(337, 276)
-        Me.lsbEventRSVP.TabIndex = 8
-        '
         'btnRSVP
         '
-        Me.btnRSVP.Location = New System.Drawing.Point(199, 308)
-        Me.btnRSVP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnRSVP.Location = New System.Drawing.Point(149, 250)
         Me.btnRSVP.Name = "btnRSVP"
-        Me.btnRSVP.Size = New System.Drawing.Size(149, 41)
+        Me.btnRSVP.Size = New System.Drawing.Size(112, 33)
         Me.btnRSVP.TabIndex = 7
         Me.btnRSVP.Text = "RSVP"
         Me.btnRSVP.UseVisualStyleBackColor = True
@@ -277,112 +265,126 @@ Partial Class frmEventRSVP
         Me.grpAddRSVP.Controls.Add(Me.Label5)
         Me.grpAddRSVP.Controls.Add(Me.Label4)
         Me.grpAddRSVP.Controls.Add(Me.btnSave)
-        Me.grpAddRSVP.Location = New System.Drawing.Point(448, 97)
-        Me.grpAddRSVP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grpAddRSVP.Location = New System.Drawing.Point(336, 79)
         Me.grpAddRSVP.Name = "grpAddRSVP"
-        Me.grpAddRSVP.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.grpAddRSVP.Size = New System.Drawing.Size(367, 417)
+        Me.grpAddRSVP.Size = New System.Drawing.Size(275, 339)
         Me.grpAddRSVP.TabIndex = 6
         Me.grpAddRSVP.TabStop = False
         Me.grpAddRSVP.Text = "Edit Members"
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(207, 287)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCancel.Location = New System.Drawing.Point(155, 233)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(135, 34)
+        Me.btnCancel.Size = New System.Drawing.Size(101, 28)
         Me.btnCancel.TabIndex = 24
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(144, 198)
-        Me.txtEmail.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtEmail.Location = New System.Drawing.Point(108, 161)
+        Me.txtEmail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(196, 22)
+        Me.txtEmail.Size = New System.Drawing.Size(148, 20)
         Me.txtEmail.TabIndex = 21
         '
         'txtLastName
         '
-        Me.txtLastName.Location = New System.Drawing.Point(144, 155)
-        Me.txtLastName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtLastName.Location = New System.Drawing.Point(108, 126)
+        Me.txtLastName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(196, 22)
+        Me.txtLastName.Size = New System.Drawing.Size(148, 20)
         Me.txtLastName.TabIndex = 20
         '
         'txtFirstName
         '
-        Me.txtFirstName.Location = New System.Drawing.Point(144, 69)
-        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtFirstName.Location = New System.Drawing.Point(108, 56)
+        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(196, 22)
+        Me.txtFirstName.Size = New System.Drawing.Size(148, 20)
         Me.txtFirstName.TabIndex = 18
         '
         'txtMiddleName
         '
-        Me.txtMiddleName.Location = New System.Drawing.Point(144, 112)
-        Me.txtMiddleName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtMiddleName.Location = New System.Drawing.Point(108, 91)
+        Me.txtMiddleName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtMiddleName.Name = "txtMiddleName"
-        Me.txtMiddleName.Size = New System.Drawing.Size(196, 22)
+        Me.txtMiddleName.Size = New System.Drawing.Size(148, 20)
         Me.txtMiddleName.TabIndex = 17
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(25, 201)
+        Me.Label7.Location = New System.Drawing.Point(19, 163)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(46, 17)
+        Me.Label7.Size = New System.Drawing.Size(35, 13)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Email:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(25, 158)
+        Me.Label6.Location = New System.Drawing.Point(19, 128)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(80, 17)
+        Me.Label6.Size = New System.Drawing.Size(61, 13)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Last Name:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(25, 114)
+        Me.Label5.Location = New System.Drawing.Point(19, 93)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(94, 17)
+        Me.Label5.Size = New System.Drawing.Size(72, 13)
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Middle Name:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(25, 71)
+        Me.Label4.Location = New System.Drawing.Point(19, 58)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(80, 17)
+        Me.Label4.Size = New System.Drawing.Size(60, 13)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "First Name:"
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(33, 287)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSave.Location = New System.Drawing.Point(25, 233)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(135, 34)
+        Me.btnSave.Size = New System.Drawing.Size(101, 28)
         Me.btnSave.TabIndex = 5
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
         '
+        'dgrEventRSVP
+        '
+        Me.dgrEventRSVP.AllowUserToAddRows = False
+        Me.dgrEventRSVP.AllowUserToDeleteRows = False
+        Me.dgrEventRSVP.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgrEventRSVP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgrEventRSVP.Location = New System.Drawing.Point(0, 18)
+        Me.dgrEventRSVP.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgrEventRSVP.Name = "dgrEventRSVP"
+        Me.dgrEventRSVP.ReadOnly = True
+        Me.dgrEventRSVP.RowTemplate.Height = 28
+        Me.dgrEventRSVP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgrEventRSVP.Size = New System.Drawing.Size(299, 198)
+        Me.dgrEventRSVP.TabIndex = 8
+        '
         'frmEventRSVP
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(912, 544)
+        Me.ClientSize = New System.Drawing.Size(684, 442)
         Me.Controls.Add(Me.grpAddRSVP)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.ToolStrip1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmEventRSVP"
         Me.Text = "frmEventRSVP"
         Me.ToolStrip1.ResumeLayout(False)
@@ -390,6 +392,7 @@ Partial Class frmEventRSVP
         Me.GroupBox3.ResumeLayout(False)
         Me.grpAddRSVP.ResumeLayout(False)
         Me.grpAddRSVP.PerformLayout()
+        CType(Me.dgrEventRSVP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -415,7 +418,6 @@ Partial Class frmEventRSVP
     Friend WithEvents tsbTutor As ToolStripButton
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents btnRSVP As Button
-    Friend WithEvents lsbEventRSVP As ListBox
     Friend WithEvents grpAddRSVP As GroupBox
     Friend WithEvents btnCancel As Button
     Friend WithEvents txtEmail As TextBox
@@ -427,4 +429,5 @@ Partial Class frmEventRSVP
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents btnSave As Button
+    Friend WithEvents dgrEventRSVP As DataGridView
 End Class
